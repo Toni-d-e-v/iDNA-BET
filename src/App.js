@@ -36,7 +36,7 @@ function App() {
   const [d, setDa] = useState(0);
   const [h, setHa] = useState(0);
   const [m, setMa] = useState(0);
-  const [s, setSa] = useState(0);
+
 
   const QatarWCUPfinal = new Date(`Dec 18, 2022 18:00:00`).getTime();
   function upadteCountDate() {
@@ -46,10 +46,9 @@ function App() {
     setDa(Math.floor(diff / 1000 / 60 / 60 / 24));
     setHa(Math.floor(diff / 1000 / 60 / 60) % 24);
     setMa(Math.floor(diff / 1000 / 60) % 60);
-    setSa(Math.floor(diff / 1000) % 60);
   }
   setInterval(upadteCountDate, 1000);
-
+  console.log(d, h, m);
 
     
 
@@ -104,8 +103,10 @@ function App() {
     const urlParams = new URLSearchParams(window.location.search);
     const txsent = urlParams.get('txsent');
     console.log(txsent);
+    if (txsent)
+    {
     toast.success("Bet sent successfully", { autoClose: 10000 });
-
+    }
   }, []);
   useEffect(() => {
     let intervalId;
@@ -193,7 +194,7 @@ function App() {
  
 
       <div style= {{
-  
+        marginTop: '50px',
       }}
       className="bg-cover bg-center bg-fixed flex flex-col items-center justify-center h-[calc(100vh-200px)] min-h-[400px]">
               <MainAnimation />
@@ -272,17 +273,13 @@ function App() {
           </div>
         </div>
       </div>
-      <section 
-      style={{
-        marginTop: '100px'
-      }}
-      
-      className="bg-zinc-900 py-2 px-4 rounded-xl text-center backdrop-blur-md">
       <div 
-      style={{
-        marginTop: '40px'
-      }}
-      className="bg-cover bg-center bg-fixed flex flex-col items-center justify-center h-[calc(100vh-200px)] min-h-[400px]">
+      style={
+        {
+          marginTop: '40px',
+        }
+      }
+      className="backdrop-blur-md bg-cover bg-center bg-fixed flex flex-col items-center justify-center h-[calc(100vh-200px)] min-h-[400px]">
       <div className=" max-w-screen-lg mx-auto mt-20 text-zinc-900 dark:text-zinc-200">
         <h2
         className = "text-3xl font-bold text-center text-zinc-200"
@@ -293,72 +290,33 @@ function App() {
 >
           Experience the first bet challenge in iDNA with iDNA better service. Put your bets in iDNA for the final march of soccer!
         </p> 
-        <div className="mt-4 flex w-full gap-4 pb-5 snap-x overflow-x-auto">
-          <div className="min-w-[80%] md:min-w-[40%]">
-            <div style= {{backgroundimage: "url('./images/croatia.jpg')"}} className="h-80 w-full snap-center rounded-xl bg-cover bg-center shadow-md shadow-black/20">
-            <img src="./images/croatia.jpg" className="h-80 w-full snap-center rounded-xl bg-cover bg-center shadow-md shadow-black/20" />
-            </div>
-            <h5  className = "text-3xl font-bold text-center text-zinc-200">Croatia</h5>
-          </div>
-          {/* DO THE SAME FOR FRANCE AND MAROocco and argentina*/ }
-          <div className="min-w-[80%] md:min-w-[40%]">
-            <div style= {{backgroundimage: "url('./images/france.jpg')"}} className="h-80 w-full snap-center rounded-xl bg-cover bg-center shadow-md shadow-black/20">
-            <img src="./images/france.jpg" className="h-80 w-full snap-center rounded-xl bg-cover bg-center shadow-md shadow-black/20" />
-            </div>
-            <h5  className = "text-3xl font-bold text-center text-zinc-200">France</h5>
-          </div>
-          <div className="min-w-[80%] md:min-w-[40%]">
-            <div style= {{backgroundimage: "url('./images/marocco.jpg')"}} className="h-80 w-full snap-center rounded-xl bg-cover bg-center shadow-md shadow-black/20">
-            <img src="./images/marocco.jpg" className="h-80 w-full snap-center rounded-xl bg-cover bg-center shadow-md shadow-black/20" />
-            </div>
-            <h5  className = "text-3xl font-bold text-center text-zinc-200">Morocco</h5>
-          </div>
-          <div className="min-w-[80%] md:min-w-[40%]">
-            <div style= {{backgroundimage: "url('./images/argentina.jpg')"}} className="h-80 w-full snap-center rounded-xl bg-cover bg-center shadow-md shadow-black/20">
-            <img src="./images/argentina.jpg" className="h-80 w-full snap-center rounded-xl bg-cover bg-center shadow-md shadow-black/20" />
-            </div>
-            <h5  className = "text-3xl font-bold text-center text-zinc-200">argentina</h5>
-          </div>
-        </div>
-        
-        <div className="bg-zinc-900 flex flex-wrap justify-center gap-3">
+ 
+          <div className=" flex flex-wrap justify-center gap-3">
 
-          <div className="timer-circle">
-          <div>
-            <span className="timer-count" id="days">{d >= 10 ? d : `0${d}`}</span>
-            <span  className="timer-type" >Days</span>
-          </div>
-          </div>
-          <div className="timer-circle">
-          <div>
-              <span className="timer-count" x-text="days"> {h >= 10 ? h : `0${h}`}</span>
-              <span className="timer-type">Hours</span>
-          </div>
-          </div>
-          <div className="timer-circle">
-          <div>
-              
-              <span className="timer-count" x-text="days"> {m >= 10 ? m : `0${m}`}</span>
-              <span className="timer-type">Minutes</span>
-          </div>
-          </div>
-          <div className="timer-circle">
-          <div>
-              
-              <span className="timer-count" x-text="days"> {s >= 10 ? s : `0${s}`}</span>
-              <span className="timer-type">Seconds</span>
-          </div>
+            <div className="timer-circle">
+            <div>
+              <span className="timer-count" id="days">{d >= 10 ? d : `0${d}`}</span>
+              <span  className="timer-type" >Days</span>
+            </div>
+            </div>
+            <div className="timer-circle">
+            <div>
+                <span className="timer-count" x-text="days"> {h >= 10 ? h : `0${h}`}</span>
+                <span className="timer-type">Hours</span>
+            </div>
+            </div>
+            <div className="timer-circle">
+            <div>
+                
+                <span className="timer-count" x-text="days"> {m >= 10 ? m : `0${m}`}</span>
+                <span className="timer-type">Minutes</span>
+            </div>
+            </div>
+  
           </div>
         </div>
       </div>
-    </div>
-    </section>
-
-
-
-   
       </div>
-      
       <ToastContainer />
     </div>
   );
