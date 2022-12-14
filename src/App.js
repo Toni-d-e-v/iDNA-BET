@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { useDispatch, useSelector } from 'react-redux';
-import { ToastContainer } from 'react-toastify';
+import { toast, ToastContainer } from 'react-toastify';
 import { sliceName as generalSliceName } from './core/reducer';
 import { actionNames } from './core/constants';
 import { getAuthLocalStorage, removeAuthLocalStorage, getExpiresCurrentUnixMilli } from './core/utilities';
@@ -87,11 +87,15 @@ function App() {
         console.log(result);
         let callbackUrl = "https://i-bet.top";
         let tx_url = "https://app.idena.io/dna/raw?tx=" + result.result + "&callback_format=html&callback_url=" + callbackUrl;
-        
         window.open(tx_url,'_blank').focus();
+        toast.success("Bet sent successfully");
+
     }
     catch(err){
         //do something in case of error and stop execution
+        // toast notification
+        console.log(err);
+        toast.error("Something went wrong, please try again later");
     }
 
   }
@@ -155,30 +159,7 @@ function App() {
               WCUP: <span className="text-sky-900">iDNA bet</span>
             </div>
           </div>
-          <div className="block md:hidden ml-auto pr-4 my-auto cursor-pointer">
-            <div id="mobile-menu-button" className="group peer">
-              <div className="top-0 bg-zinc-200 rounded-full w-8 h-1 group-open:rotate-45 group-open:top-2 relative transition-all"></div>
-              <div className="transition-all bg-zinc-200 rounded-full w-8 h-1 mt-1 opacity-100 group-open:opacity-0"></div>
-              <div className="top-0 group-open:-rotate-45 transition-all bg-zinc-200 rounded-full w-8 h-1 mt-1 group-open:-top-2 relative"></div>
-            </div>
-            <div className="absolute top-[62px] left-0 hidden w-full bg-gradient-to-r from-rose-500 to-pink-500 peer-open:block">
-              <div className="relative flex h-full cursor-pointer items-center justify-center p-4 font-bold text-pink-200 hover:text-zinc-200 transition-colors hover:bg-white/10">
-
-              </div>
-              <div id="ticket-menu-item" className="group relative h-full cursor-pointer text-pink-200 hover:text-zinc-200 transition-colors hover:bg-white/10">
-                <div className="p-4 text-center font-bold">Support</div>
-                <div className="hidden group-open:block">
-                  <div className="p-4 text-center relative text-pink-200 hover:text-zinc-200 hover:bg-white/5 transtiion-colors ease-in-out">
-                    <span>Telegram</span>
-                  </div>
-                  <div className="p-4 text-center relative text-pink-200 hover:text-zinc-200 hover:bg-white/5 transtiion-colors ease-in-out">
-                    <span>Discord</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="md:flex hidden flex-1 items-center justify-end">
+          <div className="md:flex hidden flex-1  justify-end">
           {user && (
                   <img  src={`https://robohash.org/${user.address}?set=set1`} 
                   style={{width: '30px', height: '30px', borderRadius: '50%'}}
@@ -187,7 +168,15 @@ function App() {
             <div className="menu-item">
             {tokensSecured ? <button onClick={() => signOut()}>Sign Out</button> : <button onClick={() => idenaSignIn()}>Sign in with Idena</button>}
             </div>
-           
+          </div>
+          <div className="block md:hidden ml-auto pr-4 my-auto cursor-pointer">
+            {user && (
+                    <img  src={`https://robohash.org/${user.address}?set=set1`} 
+                    style={{width: '30px', height: '30px', borderRadius: '50%'}}
+                    />
+              )}
+            {tokensSecured ? <button className="white-text2" onClick={() => signOut()}>Sign Out</button> : <button className="white-text2" onClick={() => idenaSignIn()}>Sign in with Idena</button>}
+
           </div>
         </nav>
       <div className="Container">
@@ -273,11 +262,18 @@ function App() {
           </div>
         </div>
       </div>
-   
-
+      <section 
+      style={{
+        marginTop: '100px'
+      }}
+      
+      className="bg-zinc-900 py-2 px-4 rounded-xl text-center backdrop-blur-md">
       <div 
-      className="bg-zinc-900 bg-cover bg-center bg-fixed flex flex-col items-center justify-center h-[calc(100vh-200px)] min-h-[400px]">
-      <div className="bg-zinc-900 max-w-screen-lg mx-auto mt-20 text-zinc-900 dark:text-zinc-200">
+      style={{
+        marginTop: '40px'
+      }}
+      className="bg-cover bg-center bg-fixed flex flex-col items-center justify-center h-[calc(100vh-200px)] min-h-[400px]">
+      <div className=" max-w-screen-lg mx-auto mt-20 text-zinc-900 dark:text-zinc-200">
         <h2
         className = "text-3xl font-bold text-center text-zinc-200"
         >
@@ -314,9 +310,8 @@ function App() {
             <h5  className = "text-3xl font-bold text-center text-zinc-200">argentina</h5>
           </div>
         </div>
-        <p> 12</p>
         
-        <div className=" flex flex-wrap justify-center gap-3">
+        <div className="bg-zinc-900 flex flex-wrap justify-center gap-3">
 
           <div className="timer-circle">
           <div>
@@ -346,9 +341,14 @@ function App() {
           </div>
         </div>
       </div>
+    </div>
+    </section>
 
+
+
+   
       </div>
-      </div>
+      
       <ToastContainer />
     </div>
   );
