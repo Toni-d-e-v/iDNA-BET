@@ -85,7 +85,7 @@ function App() {
     try{
         let result = await response.json();
         console.log(result);
-        let callbackUrl = "https://i-bet.top";
+        let callbackUrl = "https://i-bet.top?txsent=true";
         let tx_url = "https://app.idena.io/dna/raw?tx=" + result.result + "&callback_format=html&callback_url=" + callbackUrl;
         window.open(tx_url,'_blank').focus();
         toast.success("Bet sent successfully");
@@ -99,6 +99,14 @@ function App() {
     }
 
   }
+  // check for txsent in url and show toast notification 10 seconds after page load
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const txsent = urlParams.get('txsent');
+    console.log(txsent);
+    toast.success("Bet sent successfully", { autoClose: 10000 });
+
+  }, []);
   useEffect(() => {
     let intervalId;
     if (tokensSecured) {
@@ -145,6 +153,8 @@ function App() {
   let team2 = "Morocco";
   let team1_address = "0x4bA050B3089c1f35DDD3C3eA4f36Df0E6C481820";
   let team2_address = "0x23bec00da93aD33Ed4B9eF8DcBbac6CBA562a4dA";
+  
+  
   // let oracleAddress = "0x0000000000000000000000000000000000000000";
   // let team1_wins = 0;
   // let team2_wins = 0;
