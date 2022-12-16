@@ -523,7 +523,7 @@ async function getBetsNumber(teamAddr){
           </div>
           <div className="mt-3">
           <div className="white-text2 bg-pink-400/70 py-2 px-4 rounded-xl text-center backdrop-blur-md">
-            <h3> <span className="text-[#002654]">{team2?.substring(0,3)}</span><span className="text-white">{team2?.substring(3,4)}</span><span className="text-[#ED2939]">{team2?.substring(4,7)}</span></h3>
+            <h3> <span className="text-[#002654]">{team2?.substring(0,2)}</span><span className="text-white">{team2?.substring(2,4)}</span><span className="text-[#ED2939]">{team2?.substring(4)}</span></h3>
             </div>
             <div className="mt-3 flex gap-2">
             <div className="bg-pink-400/70 mt-3 py-2 px-4 rounded-xl text-center backdrop-blur-md">
