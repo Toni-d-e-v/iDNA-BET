@@ -145,6 +145,7 @@ function App() {
   };
 
   
+
   // craete me and states
   // oracleAdress
   // Smart contract: team1_wins, team2_wins
@@ -162,45 +163,57 @@ function App() {
   // make it global
   return (
     <div className="App" >
-
+    <header className="text-zinc-200">
     <nav className="sticky z-10 flex top-0 bg-gradient-to-r from-rose-500 to-pink-500">
           <div className="flex items-center p-2 gap-2">
-            <img src="./images/logo_wcup-inverted.png" alt="logo" className="w-12 h-12" />
+            <img src="./images/logo_wcup-inverted.png" alt="logo" width="50" />
             <div className="font-bold text-2xl">
               WCUP: <span className="text-sky-900">iDNA bet</span>
             </div>
           </div>
-          <div className="md:flex hidden flex-1  justify-end">
-          {user && (
-                  <img  src={`https://robohash.org/${user.address}?set=set1`} 
-                  style={{width: '30px', height: '30px', borderRadius: '50%'}}
-                  />
-            )}
-            <div className="menu-item">
-            {tokensSecured ? <button onClick={() => signOut()}>Sign Out</button> : <button onClick={() => idenaSignIn()}>Sign in with Idena</button>}
+          <div className="block md:hidden ml-auto pr-4 my-auto cursor-pointer">
+          <div id="mobile-menu-button" className="group peer">
+              <div className="top-0 bg-zinc-200 rounded-full w-8 h-1 group-open:rotate-45 group-open:top-2 relative transition-all"></div>
+              <div className="transition-all bg-zinc-200 rounded-full w-8 h-1 mt-1 opacity-100 group-open:opacity-0"></div>
+              <div className="top-0 group-open:-rotate-45 transition-all bg-zinc-200 rounded-full w-8 h-1 mt-1 group-open:-top-2 relative"></div>
+            </div>
+            <div className="absolute top-[62px] left-0 hidden w-full bg-gradient-to-r from-rose-500 to-pink-500 peer-open:block">
+              <div className="relative flex h-full cursor-pointer items-center justify-center p-4 font-bold text-pink-200 hover:text-zinc-200 transition-colors hover:bg-white/10">
+                <span>{tokensSecured ? <button onClick={() => signOut()}>Sign Out</button> : <button onClick={() => idenaSignIn()}>Sign in with Idena</button>}</span>
+              </div>
+              <div id="ticket-menu-item" className="group relative h-full cursor-pointer text-pink-200 hover:text-zinc-200 transition-colors hover:bg-white/10">
+                <div className="p-4 text-center font-bold">Support</div>
+                <div className="hidden group-open:block">
+                  <div className="p-4 text-center relative text-pink-200 hover:text-zinc-200 hover:bg-white/5 transtiion-colors ease-in-out">
+                    <span><a href='https:/t.me/ltrvlr' target="_blank" rel="noopener noreferrer">Telegram</a></span>
+                  </div>
+                  <div className="p-4 text-center relative text-pink-200 hover:text-zinc-200 hover:bg-white/5 transtiion-colors ease-in-out">
+                    <span><a href='https://discordapp.com/users/749316657318723705' target="_blank" rel="noopener noreferrer">Discord</a></span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-          <div className="block md:hidden ml-auto pr-4 my-auto cursor-pointer">
-            {user && (
-                    <img  src={`https://robohash.org/${user.address}?set=set1`} 
-                    style={{width: '30px', height: '30px', borderRadius: '50%'}}
-                    />
-              )}
-            {tokensSecured ? <button className="white-text2" onClick={() => signOut()}>Sign Out</button> : <button className="white-text2" onClick={() => idenaSignIn()}>Sign in with Idena</button>}
-
-          </div>
+          <div className="md:flex hidden flex-1 items-center justify-end">
+            <div className="menu-item">
+              <span>{tokensSecured ? <button onClick={() => signOut()}>Sign Out</button> : <button onClick={() => idenaSignIn()}>Sign in with Idena</button>}</span>
+            </div>
+            <div className="menu-item group">
+              <span><pre>Support </pre></span>
+              <div className="group-hover:block hidden absolute bg-pink-500 top-full right-0 whitespace-nowrap rounded-b-md text-right">
+                <div className="p-4 font-bold hover:bg-white/5 hover:text-zinc-200 transition-colors ease-in-out cursor-pointer text-pink-200">
+                  <span><a href='https:/t.me/ltrvlr' target="_blank" rel="noopener noreferrer">Telegram</a></span>
+                </div>
+                <div className="p-4 font-bold hover:bg-white/5 hover:text-zinc-200 transition-colors ease-in-out cursor-pointer text-pink-200">
+                  <span><a href='https://discordapp.com/users/749316657318723705' target="_blank" rel="noopener noreferrer">Discord</a></span>
+                </div>
+              </div>
+            </div>
+          </div>  
         </nav>
-      <div className="Container">
- 
-
-      <div style= {{
-        marginTop: '50px',
-      }}
-      className="bg-cover bg-center bg-fixed flex flex-col items-center justify-center h-[calc(100vh-200px)] min-h-[400px]">
-              <MainAnimation />
-
+        <MainAnimation />
+      <div className="bg-cover bg-center bg-fixed flex flex-col items-center justify-center h-[calc(100vh)] min-h-[400px]">
           <div className="bg-white/30 py-2 px-4 rounded-xl text-center backdrop-blur-md">
-
             <div className="relative">
               <img src="./images/logo.png" width="175" />
               <div className="flex item-center justify-center mt-[-70px] mb-5">
@@ -224,15 +237,34 @@ function App() {
           ">
       Bets for the FINAL will be available after December 14th 9pm GMT.
           </div>
+          <div className="lg:grid grid-cols-2 grid-rows-1 gap-6">
           <div className="mt-3">
           <div className="white-text2  bg-pink-400/70 py-2 px-4 rounded-xl text-center backdrop-blur-md">
-            <h3> { team1 } Wins</h3>
+            <h3> <span className="text-[#002654]">{team1?.substring(0,2)}</span><span className="text-white">{team1?.substring(2,4)}</span><span className="text-[#ED2939]">{team1?.substring(4)}</span></h3>
             </div>
             <div className="mt-3 flex gap-2">
-              <input type="number" id="team1_bet" placeholder='iDNA' className="rounded-sm border border-white/40 bg-white/30 backdrop-blur-md p-2 font-bold text-sky-900 placeholder-zinc-500 caret-pink-500 outline-pink-500"/>
+            <div className="bg-pink-400/70 mt-3 py-2 px-4 rounded-xl text-center backdrop-blur-md">
+            <table className="mt-5 table w-full border border-zinc-500 border-collapse">
+          <tbody>
+            <tr>
+              <td className="border border-zinc-500 p-3 text-lg">Prize fund</td>
+              <td className="border border-zinc-500 p-3 text-base font-bold">5000</td>
+            </tr>
+            <tr>
+              <td className="border border-zinc-500 p-3 text-lg">
+                Single bet
+              </td>
+              <td className="border border-zinc-500 p-3 text-base font-bold">
+                100
+              </td>
+            </tr>
+          </tbody>
+          <caption className="caption-bottom p-2">
+            <div className="text-white flex items-center justify-center gap-2">
+            <input type="number" id="team1_bet" placeholder='iDNA' className="rounded-lg border border-white/40 bg-white/30 backdrop-blur-md p-2 font-bold text-sky-900 placeholder-zinc-500 caret-pink-500 outline-pink-500"/>
               {
                 user && (
-                  <div className="white-text2  cursor-pointer rounded-sm bg-pink-500 py-2 px-4 font-bold transition-colors hover:bg-sky-900 hover:shadow-lg"
+                  <div className="truncate cursor-pointer rounded-lg bg-pink-500 py-2.5 px-4 font-bold transition-colors hover:bg-sky-900 hover:shadow-lg"
                   onClick={() => bet(team1_address, document.getElementById('team1_bet').value)}
                   >
                   Place Bet
@@ -241,22 +273,45 @@ function App() {
               }
               {
                 !user && (
-                  <div className="white-text2  cursor-pointer rounded-sm bg-pink-500 py-2 px-4 font-bold transition-colors hover:bg-sky-900 hover:shadow-lg">
+                  <div className="truncate cursor-pointer rounded-lg bg-pink-500 py-2.5 px-4 font-bold transition-colors hover:bg-sky-900 hover:shadow-lg">
                   Sign in to place bet
                   </div>
                 )
               }
+            </div>
+          </caption>
+        </table>
+              
+              </div>
+            </div>
           </div>
-          <p className="text-center mt-3 text-sm font-bold">
-          </p>
-          <div className="white-text2  bg-pink-400/70 py-2 px-4 rounded-xl text-center backdrop-blur-md">
-            <h3> { team2 } Wins</h3>
+          <div className="mt-3">
+          <div className="white-text2 bg-pink-400/70 py-2 px-4 rounded-xl text-center backdrop-blur-md">
+            <h3> <span className="text-[#c1272d]">{team2?.substring(0,3)}</span><span className="text-white">{team2?.substring(3,4)}</span><span className="text-[#006233]">{team2?.substring(4,7)}</span></h3>
             </div>
             <div className="mt-3 flex gap-2">
-              <input type="number" id="team2_bet" placeholder='iDNA' className="rounded-sm border border-white/40 bg-white/30 backdrop-blur-md p-2 font-bold text-sky-900 placeholder-zinc-500 caret-pink-500 outline-pink-500"/>
+            <div className="bg-pink-400/70 mt-3 py-2 px-4 rounded-xl text-center backdrop-blur-md">
+            <table className="mt-5 table w-full border border-zinc-500 border-collapse">
+          <tbody>
+            <tr>
+              <td className="border border-zinc-500 p-3 text-lg">Prize fund</td>
+              <td className="border border-zinc-500 p-3 text-base font-bold">5000</td>
+            </tr>
+            <tr>
+              <td className="border border-zinc-500 p-3 text-lg">
+                Single bet
+              </td>
+              <td className="border border-zinc-500 p-3 text-base font-bold">
+                100
+              </td>
+            </tr>
+          </tbody>
+          <caption className="caption-bottom p-2">
+            <div className="text-white flex items-center justify-center gap-2">
+            <input type="number" id="team2_bet" placeholder='iDNA' className="rounded-lg border border-white/40 bg-white/30 backdrop-blur-md p-2 font-bold text-sky-900 placeholder-zinc-500 caret-pink-500 outline-pink-500"/>
               {
                 user && (
-                  <div className="white-text2  cursor-pointer rounded-sm bg-pink-500 py-2 px-4 font-bold transition-colors hover:bg-sky-900 hover:shadow-lg"
+                  <div className="truncate cursor-pointer rounded-lg bg-pink-500 py-2.5 px-4 font-bold transition-colors hover:bg-sky-900 hover:shadow-lg"
                   onClick={() => bet(team2_address, document.getElementById('team2_bet').value)}
                   >
                   Place Bet
@@ -265,22 +320,23 @@ function App() {
               }
               {
                 !user && (
-                  <div className="white-text2  cursor-pointer rounded-sm bg-pink-500 py-2 px-4 font-bold transition-colors hover:bg-sky-900 hover:shadow-lg">
+                  <div className="truncate cursor-pointer rounded-lg bg-pink-500 py-2.5 px-4 font-bold transition-colors hover:bg-sky-900 hover:shadow-lg">
                   Sign in to place bet
                   </div>
                 )
               }
-          </div>
+            </div>
+          </caption>
+        </table>
+              
+              </div>
+            </div>
+        </div>
         </div>
       </div>
-      <div 
-      style={
-        {
-          marginTop: '40px',
-        }
-      }
-      className="backdrop-blur-md bg-cover bg-center bg-fixed flex flex-col items-center justify-center h-[calc(100vh-200px)] min-h-[400px]">
-      <div className=" max-w-screen-lg mx-auto mt-20 text-zinc-900 dark:text-zinc-200">
+      </header>
+      <div className="mt-16 backdrop-blur-md bg-cover bg-center bg-fixed">
+      <div className=" max-w-screen-lg mx-auto text-zinc-900 dark:text-zinc-200">
         <h2
         className = "text-3xl font-bold text-center text-zinc-200"
         >
@@ -291,7 +347,7 @@ function App() {
           Experience the first bet challenge in iDNA with iDNA better service. Put your bets in iDNA for the final march of soccer!
         </p> 
  
-          <div className=" flex flex-wrap justify-center gap-3">
+          <div className="mt-10 flex flex-wrap justify-center gap-3">
 
             <div className="timer-circle">
             <div>
@@ -301,21 +357,20 @@ function App() {
             </div>
             <div className="timer-circle">
             <div>
-                <span className="timer-count" x-text="days"> {h >= 10 ? h : `0${h}`}</span>
+                <span className="timer-count" id="hours">{h >= 10 ? h : `0${h}`}</span>
                 <span className="timer-type">Hours</span>
             </div>
             </div>
             <div className="timer-circle">
             <div>
                 
-                <span className="timer-count" x-text="days"> {m >= 10 ? m : `0${m}`}</span>
+                <span className="timer-count" id="minutes"> {m >= 10 ? m : `0${m}`}</span>
                 <span className="timer-type">Minutes</span>
             </div>
             </div>
   
           </div>
         </div>
-      </div>
       </div>
       <ToastContainer />
     </div>
