@@ -37,8 +37,8 @@ function App() {
   const [h, setHa] = useState(0);
   const [m, setMa] = useState(0);
 
-
-  const QatarWCUPfinal = new Date(`Dec 18, 2022 18:00:00`).getTime();
+  //Dec 18, 3pm GMT 2022
+  const QatarWCUPfinal = new Date(`Dec 18, 2022 15:00:00 GMT+03:00`);
   function upadteCountDate() {
     const currentTime = new Date();
     const diff = QatarWCUPfinal - currentTime;
@@ -51,13 +51,18 @@ function App() {
   console.log(d, h, m);
 
     
+  // local storage bet_placed
+  const [bet_placed, setBet_placed] = useState(localStorage.getItem('bet_placed') || false);
 
   async function bet(team,betAmount){
     let fromAddress = user.address; // get sender address
-     
     let url = "https://restricted.idena.io";
     let api_key = "idena-restricted-node-key";
-    
+    // check if daate is over
+    if (new Date() > QatarWCUPfinal) {
+        toast.error("Bet is closed");
+        return;
+    }
     // get raw tx from node
     let data={
         "method": "bcn_getRawTx",
@@ -88,6 +93,8 @@ function App() {
         let tx_url = "https://app.idena.io/dna/raw?tx=" + result.result + "&callback_format=html&callback_url=" + callbackUrl;
         window.open(tx_url,'_blank').focus();
         toast.success("Bet sent successfully");
+        // set bet_placed to true
+        setBet_placed(true);
 
     }
     catch(err){
@@ -98,6 +105,15 @@ function App() {
     }
 
   }
+
+  // check for bet placed
+
+  useEffect(() => {
+    if (bet_placed) {
+      alert("Your bet was placed, do you want to show this popup again?")
+    }
+  }, [bet_placed]);
+
   // check for txsent in url and show toast notification 10 seconds after page load
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);
@@ -150,16 +166,12 @@ function App() {
   // Smart contract: team1_wins, team2_wins
   // And team1, team2
 
-  let team1 = "France";
-  let team2 = "Morocco";
-  let team1_address = "0x4bA050B3089c1f35DDD3C3eA4f36Df0E6C481820";
-  let team2_address = "0x23bec00da93aD33Ed4B9eF8DcBbac6CBA562a4dA";
+  let team1 = "Argentina";
+  let team2 = "France";
+  let team1_address = "0x475f171af66e95b90ce5b7d35e0c96450daf5214";
+  let team2_address = "0x216a263828A20f832e9C091379Ee5474Ac3DD30F";
   
-  
-  // let oracleAddress = "0x0000000000000000000000000000000000000000";
-  // let team1_wins = 0;
-  // let team2_wins = 0;
-  // make it global
+
   return (
     <div className="App" >
 
