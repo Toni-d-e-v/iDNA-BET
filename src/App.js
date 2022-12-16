@@ -450,7 +450,7 @@ async function getBetsNumber(teamAddr){
           <div className="lg:grid grid-cols-2 grid-rows-1 gap-6">
           <div className="mt-3">
           <div className="white-text2  bg-pink-400/70 py-2 px-4 rounded-xl text-center backdrop-blur-md">
-            <h3> <span className="text-[#002654]">{team1?.substring(0,2)}</span><span className="text-white">{team1?.substring(2,4)}</span><span className="text-[#ED2939]">{team1?.substring(4)}</span></h3>
+            <h3> <span className="text-[#6CACE4]">{team1?.substring(0,3)}</span><span className="text-white">{team1?.substring(3,5)}</span><span className="text-[#FFB81C]">{team1?.substring(5)}</span></h3>
             </div>
             <div className="mt-3 flex gap-2">
             <div className="bg-pink-400/70 mt-3 py-2 px-4 rounded-xl text-center backdrop-blur-md">
@@ -523,7 +523,7 @@ async function getBetsNumber(teamAddr){
           </div>
           <div className="mt-3">
           <div className="white-text2 bg-pink-400/70 py-2 px-4 rounded-xl text-center backdrop-blur-md">
-            <h3> <span className="text-[#c1272d]">{team2?.substring(0,3)}</span><span className="text-white">{team2?.substring(3,4)}</span><span className="text-[#006233]">{team2?.substring(4,7)}</span></h3>
+            <h3> <span className="text-[#002654]">{team2?.substring(0,3)}</span><span className="text-white">{team2?.substring(3,4)}</span><span className="text-[#ED2939]">{team2?.substring(4,7)}</span></h3>
             </div>
             <div className="mt-3 flex gap-2">
             <div className="bg-pink-400/70 mt-3 py-2 px-4 rounded-xl text-center backdrop-blur-md">
