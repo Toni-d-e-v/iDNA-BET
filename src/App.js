@@ -412,7 +412,7 @@ async function getBetsNumber(teamAddr){
               <span><pre>Support </pre></span>
               <div className="group-hover:block hidden absolute bg-pink-500 top-full right-0 whitespace-nowrap rounded-b-md text-right">
                 <div className="p-4 font-bold hover:bg-white/5 hover:text-zinc-200 transition-colors ease-in-out cursor-pointer text-pink-200">
-                  <span><a href='https://t.me/ltrvlr' target="_blank" rel="noopener noreferrer">Telegram</a></span>
+                  <span><a href="https://t.me/ltrvlr" target="_blank" rel="noopener noreferrer">Telegram</a></span>
                 </div>
                 <div className="p-4 font-bold hover:bg-white/5 hover:text-zinc-200 transition-colors ease-in-out cursor-pointer text-pink-200">
                   <span><a href='https://discordapp.com/users/749316657318723705' target="_blank" rel="noopener noreferrer">Discord</a></span>
