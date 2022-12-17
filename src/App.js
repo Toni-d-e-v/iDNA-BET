@@ -606,18 +606,9 @@ async function getBetsNumber(teamAddr){
       </header>
       <div className="mt-16 backdrop-blur-md bg-cover bg-center bg-fixed">
       <div className=" max-w-screen-lg mx-auto text-zinc-900 dark:text-zinc-200">
-        <h2
-        className = "text-3xl font-bold text-center text-zinc-200"
-        >
-          Teams
-        </h2>
-        <p         className = "text-3xl font-bold text-center text-zinc-200"
->
-          Experience the first bet challenge in iDNA.{'\n'}Place a bet on the Final Match of FIFA World Cup 2022 and WIN with your favorite team!
-        </p> 
- 
+        <h2 className = "text-3xl font-bold text-center text-zinc-200">The game will never be the same!</h2>
+        <p className = "mt-4 text-3xl font-bold text-center text-zinc-200">Experience the first bet challenge in iDNA.<br />Place a bet on the Final Match of FIFA World Cup 2022 and WIN with your favorite team!</p>
           <div className="mt-10 flex flex-wrap justify-center gap-3">
-
             <div className="timer-circle">
             <div>
               <span className="timer-count" id="days">{d >= 10 ? d : `0${d}`}</span>
