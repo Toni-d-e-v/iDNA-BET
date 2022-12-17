@@ -397,7 +397,7 @@ async function getBetsNumber(teamAddr){
             </div>
             <div className="absolute top-[62px] left-0 hidden w-full bg-gradient-to-r from-rose-500 to-pink-500 peer-open:block">
               <div className="relative flex h-full cursor-pointer items-center justify-center p-4 font-bold text-pink-200 hover:text-zinc-200 transition-colors hover:bg-white/10">
-                <span>{tokensSecured ? <button onClick={() => signOut()}>Sign Out</button> : <button onClick={() => idenaSignIn()}>Sign in with Idena</button>}</span>
+                <span>{tokensSecured ? <button onClick={() => signOut()}>Sign Out</button> : <button onClick={() => idenaSignIn()}>Sign in</button>}</span>
               </div>
               <div id="ticket-menu-item" className="group relative h-full cursor-pointer text-pink-200 hover:text-zinc-200 transition-colors hover:bg-white/10">
                 <div className="p-4 text-center font-bold">Support</div>
@@ -414,7 +414,7 @@ async function getBetsNumber(teamAddr){
           </div>
           <div className="md:flex hidden flex-1 items-center justify-end">
             <div className="menu-item">
-              <span>{tokensSecured ? <button onClick={() => signOut()}>Sign Out</button> : <button onClick={() => idenaSignIn()}>Sign in with Idena</button>}</span>
+              <span>{tokensSecured ? <button onClick={() => signOut()}>Sign Out</button> : <button onClick={() => idenaSignIn()}>Sign in</button>}</span>
             </div>
             <div className="menu-item group">
               <span><pre>Support </pre></span>
