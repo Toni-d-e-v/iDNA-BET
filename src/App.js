@@ -613,7 +613,7 @@ async function getBetsNumber(teamAddr){
         </h2>
         <p         className = "text-3xl font-bold text-center text-zinc-200"
 >
-          Experience the first bet challenge in iDNA with iDNA better service. Put your bets in iDNA for the final march of soccer!
+          Experience the first bet challenge in iDNA.{'\n'}Place a bet on the Final Match of FIFA World Cup 2022 and WIN with your favorite team!
         </p> 
  
           <div className="mt-10 flex flex-wrap justify-center gap-3">
