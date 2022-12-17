@@ -340,7 +340,7 @@ async function getBetsNumber(teamAddr){
     document.getElementById(handleTeam2_id).innerHTML = await getBalance(team2_address);
 
     // check for login
-    if(user.address){
+    if(user && user.address){
       document.getElementById("team1_bets").innerHTML = await getUserBet(user.address,team1_address);
       document.getElementById("team2_bets").innerHTML = await getUserBet(user.address,team2_address);
       document.getElementById("team1_canwin").innerHTML = await calculateReward(user.address,team1_address);
@@ -395,10 +395,10 @@ async function getBetsNumber(teamAddr){
                 <div className="p-4 text-center font-bold">Support</div>
                 <div className="hidden group-open:block">
                   <div className="p-4 text-center relative text-pink-200 hover:text-zinc-200 hover:bg-white/5 transtiion-colors ease-in-out">
-                    <span><a href='https:/t.me/ltrvlr' target="_blank" rel="noopener noreferrer">Telegram</a></span>
+                    <span><a href="https:/t.me/ltrvlr" target="_blank" rel="noopener noreferrer">Telegram</a></span>
                   </div>
                   <div className="p-4 text-center relative text-pink-200 hover:text-zinc-200 hover:bg-white/5 transtiion-colors ease-in-out">
-                    <span><a href='https://discordapp.com/users/749316657318723705' target="_blank" rel="noopener noreferrer">Discord</a></span>
+                    <span><a href="https://discordapp.com/users/749316657318723705" target="_blank" rel="noopener noreferrer">Discord</a></span>
                   </div>
                 </div>
               </div>
