@@ -371,6 +371,14 @@ async function getBetsNumber(teamAddr){
   
   // Number of addresses that placed bets on team 2: getBetsNumber(team2_addr);
 
+  const menuClickHandler = (e) => {
+    if (e.currentTarget.classList.contains('open')) {
+        e.currentTarget.classList.remove('open');
+    } else {
+        e.currentTarget.classList.add('open');
+    }
+};  
+
   return (
     <div className="App" >
     <header className="text-zinc-200">
@@ -382,7 +390,7 @@ async function getBetsNumber(teamAddr){
             </div>
           </div>
           <div className="block md:hidden ml-auto pr-4 my-auto cursor-pointer">
-          <div id="mobile-menu-button" className="group peer">
+          <div id="mobile-menu-button" className="group peer" onClick={menuClickHandler}>
               <div className="top-0 bg-zinc-200 rounded-full w-8 h-1 group-open:rotate-45 group-open:top-2 relative transition-all"></div>
               <div className="transition-all bg-zinc-200 rounded-full w-8 h-1 mt-1 opacity-100 group-open:opacity-0"></div>
               <div className="top-0 group-open:-rotate-45 transition-all bg-zinc-200 rounded-full w-8 h-1 mt-1 group-open:-top-2 relative"></div>
