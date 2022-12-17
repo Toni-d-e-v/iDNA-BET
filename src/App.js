@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { useDispatch, useSelector } from 'react-redux';
 import { toast, ToastContainer } from 'react-toastify';
@@ -377,7 +377,17 @@ async function getBetsNumber(teamAddr){
     } else {
         e.currentTarget.classList.add('open');
     }
-};  
+};
+
+  const menuRef = useRef();
+
+  const supportClickHandler = () => {
+    if (menuRef.current.classList.contains('hidden')) {
+        menuRef.current.classList.remove('hidden');
+    } else {
+        menuRef.current.classList.add('hidden');
+    }
+};
 
   return (
     <div className="App" >
@@ -399,9 +409,9 @@ async function getBetsNumber(teamAddr){
               <div className="relative flex h-full cursor-pointer items-center justify-center p-4 font-bold text-pink-200 hover:text-zinc-200 transition-colors hover:bg-white/10">
                 <span>{tokensSecured ? <button onClick={() => signOut()}>Sign Out</button> : <button onClick={() => idenaSignIn()}>Sign in</button>}</span>
               </div>
-              <div id="ticket-menu-item" className="group relative h-full cursor-pointer text-pink-200 hover:text-zinc-200 transition-colors hover:bg-white/10">
+              <div onClick={supportClickHandler} id="ticket-menu-item" className="group relative h-full cursor-pointer text-pink-200 hover:text-zinc-200 transition-colors hover:bg-white/10">
                 <div className="p-4 text-center font-bold">Support</div>
-                <div className="hidden group-open:block">
+                <div ref={menuRef} className="hidden group-open:block">
                   <div className="p-4 text-center relative text-pink-200 hover:text-zinc-200 hover:bg-white/5 transtiion-colors ease-in-out">
                     <span><a href="https://t.me/ltrvlr" target="_blank" rel="noopener noreferrer">Telegram</a></span>
                   </div>
