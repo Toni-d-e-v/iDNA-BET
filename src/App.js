@@ -38,7 +38,7 @@ function App() {
   const [m, setMa] = useState(0);
 
   //Dec 18, 3pm GMT 2022
-  const QatarWCUPfinal = new Date(`Dec 18, 2022 15:00:00 GMT+03:00`);
+  const QatarWCUPfinal = new Date(`Dec 18, 2022 15:00:00 GMT`);
   function upadteCountDate() {
     const currentTime = new Date();
     const diff = QatarWCUPfinal - currentTime;
