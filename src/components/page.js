@@ -395,7 +395,7 @@ async function getBetsNumber(teamAddr){
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
                 </svg>
             </button>
-            <img src="./images/logo_wcup-inverted.png" alt="logo" width="50" />
+            
             <div className="font-bold text-2xl">
               <span className="text-sky-900">iDNA bet</span>
             </div>
