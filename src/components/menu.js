@@ -5,7 +5,7 @@ import './Menu.css';
 import Page from './page.js';
 function Menu() {
   let Match1 = [
-    new Date("2023-01-01 00:00:00"),
+    new Date("2023-02-02 00:00:00"),
     "Team 1",
     "Team 2",
     "Team 1 Address",
@@ -13,7 +13,7 @@ function Menu() {
     "INFO"
  ];
   let Match2 = [
-    new Date("2023-01-01 00:00:00"),
+    new Date("2023-02-02 00:00:00"),
     "Team 3",
     "Team 4",
     "Team 3 Address",
@@ -25,7 +25,7 @@ function Menu() {
   const renderMatches = () => {
     return (
         <div
-        className='CardGrid'
+        className=' text-blue-500'
        >
        {matches.map((match, index) => (
        <div className='Card'

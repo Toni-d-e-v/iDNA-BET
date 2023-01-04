@@ -701,8 +701,8 @@ h6{
   height: 104px;
   width: 104px;
   border-radius: 9999px;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-  --tw-bg-opacity: 0.05;
+  background-color: rgb(235 42 71 / var(--tw-bg-opacity));
+  --tw-bg-opacity: 0.1;
 }
 
 @media (min-width: 768px){

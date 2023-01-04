@@ -6,7 +6,7 @@ import { sliceName as generalSliceName } from '../core/reducer';
 import { actionNames } from '../core/constants';
 import { getAuthLocalStorage, removeAuthLocalStorage, getExpiresCurrentUnixMilli } from '../core/utilities';
 import { appConfigurations } from '../core/constants';
-import MainAnimation from "../MainAnim";
+// import MainAnimation from "../MainAnim";
 import { useState } from 'react'
 import '../App.css';
 import 'react-toastify/dist/ReactToastify.css';
@@ -51,7 +51,7 @@ function Page(
   const [h, setHa] = useState(0);
   const [m, setMa] = useState(0);
 
-  //Dec 18, 3pm GMT 2022
+  //Jan 18, 3pm GMT 2023
   function upadteCountDate() {
     const currentTime = new Date();
     const diff = date - currentTime;
@@ -443,8 +443,8 @@ async function getBetsNumber(teamAddr){
             </div>
           </div>  
         </nav>
-        <MainAnimation />
-      <div className="bg-cover bg-center bg-fixed flex flex-col items-center justify-center h-[calc(100vh)] min-h-[400px]">
+
+      <div className="bg-gradient-to-r from-[#ff7a90] via-[#de5e78] to-[#cc3354] flex flex-col items-center justify-center h-[calc(100vh+100px)] min-h-[400px] animate-bias border-b-[2px] border-pink-200">
           <div className="bg-white/30 py-2 px-4 rounded-xl text-center backdrop-blur-md">
             <div className="relative">
               <img src="./images/logo.png" width="175" />
@@ -459,10 +459,10 @@ async function getBetsNumber(teamAddr){
               </div>
             </div>
           </div>
-          <div className="text-5xl font-bold">
-          <span className="text-zinc-200">i</span>
+          <div className="text-5xl font-bold drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]">
+          <span className="text-orange-300">i</span>
           <span className="text-sky-900">DNA</span>
-          <span className="text-zinc-200">bet</span>
+          <span className="text-orange-300">bet</span>
           </div>
           <div className="font-bold mt-3 text-base backdrop-blur-md
             white-text
@@ -622,11 +622,18 @@ async function getBetsNumber(teamAddr){
         </div>
       </div>
       </header>
-      <div className="mt-16 backdrop-blur-md bg-cover bg-center bg-fixed">
-      <div className=" max-w-screen-lg mx-auto text-zinc-900 dark:text-zinc-200">
-        <h2 className = "text-3xl font-bold text-center text-zinc-200">The game will never be the same!</h2>
-        <p className = "mt-4 text-3xl font-bold text-center text-zinc-200">Experience the first bet challenge in iDNA.<br />Place a bet on the Final Match of FIFA World Cup 2022 and WIN with your favorite team!</p>
-          <div className="mt-10 flex flex-wrap justify-center gap-3">
+      <div className="flex items-end overflow-hidden">
+        <div className="flex -mb-px h-[2px] w-full -scale-x-100">
+          <div className="w-full flex-none blur-sm [background-image:linear-gradient(90deg,rgba(56,189,248,0)_0%,#0EA5E9_32.29%,rgba(236,72,153,0.3)_67.19%,rgba(236,72,153,0)_100%)]"></div>
+          <div className="-ml-[100%] w-full flex-none blur-[1px] [background-image:linear-gradient(90deg,rgba(56,189,248,0)_0%,#0EA5E9_32.29%,rgba(236,72,153,0.3)_67.19%,rgba(236,72,153,0)_100%)]"></div>
+        </div>
+      </div>
+<div className="bg-cover bg-center bg-fixed bg-gradient-to-b from-[#f7e9e2] to-[#dadef1]">
+      <div className="pt-8 backdrop-blur-md">
+      <div className=" max-w-screen-lg mx-auto text-zinc-900 dark:text-zinc-500">
+        <h2 className = "text-3xl font-bold text-center text-zinc-500">The game will never be the same!</h2>
+        <p className = "mt-4 text-3xl font-bold text-center text-zinc-500">Experience the first bet challenge in iDNA.<br />Place a bet on the Final Match of FIFA World Cup 2022 and WIN with your favorite team!</p>
+          <div className="mt-10 pb-10 flex flex-wrap justify-center gap-3">
             <div className="timer-circle">
             <div>
               <span className="timer-count" id="days">{d >= 10 ? d : `0${d}`}</span>
@@ -649,6 +656,7 @@ async function getBetsNumber(teamAddr){
   
           </div>
         </div>
+      </div>
       </div>
       <ToastContainer />
     </div>
