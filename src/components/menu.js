@@ -1,6 +1,5 @@
 import 'react-toastify/dist/ReactToastify.css';
 import React from 'react';
-import './Menu.css';
 
 import Page from './page.js';
 function Menu() {
@@ -25,17 +24,16 @@ function Menu() {
   const renderMatches = () => {
     return (
         <div
-        className=' text-blue-500'
+        className='text-center lg:mx-20 md:mx-1 mt-10 grid grid-cols-2 lg:gap-6 md:gap-3 justify-items-center text-blue-500'
        >
        {matches.map((match, index) => (
-       <div className='Card'
+       <div className="bg-pink-400/70 text-white outline-zinc-500 rounded-xl hover:border-gray-400 hover:scale-105 transition duration-150 ease-in-out focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500 border border-gray-300 p-4 lg:w-2/5 md:m-4"
          key={index}
        >
-         <h5>{match[5]}</h5>
-         <h6>{match[1]} vs {match[2]}</h6>
-         <p>{match[0].toLocaleString()}</p>
-         <button key={index} onClick={() => setPage(index + 1)}>
-           View Match
+         <button className="divide-y divide-dashed divide-zinc-200" key={index} onClick={() => setPage(index + 1)}>
+         <h5 className="">{match[5]}</h5>
+         <h6 className="">{match[1]} vs {match[2]}</h6>
+         <p className="">{match[0].toLocaleString()}</p>
          </button>
        </div>
        ))}
@@ -45,8 +43,31 @@ function Menu() {
 
   if (page === 0) {
     return (
-      <div className="AppHome">
-        <h1>Matches</h1>
+      <div className="AppHome bg-gradient-to-r from-[#ff7a90] via-[#de5e78] to-[#cc3354] animate-bias min-h-screen h-full">
+        <div className="flex flex-col items-center justify-center">
+        <div className="bg-white/30 py-2 px-4 rounded-xl text-center backdrop-blur-md">
+            <div className="relative">
+              <img src="./images/logo.png" width="175" />
+              <div className="flex item-center justify-center mt-[-70px] mb-5">
+                <div className="bg-pink-500 w-14 h-14 rounded-full flex items-center justify-center gap-1">
+                  <div className="h-2 w-1 bg-pink-300 rounded-full animate-wavey"></div>
+                  <div className="h-3 w-1 bg-pink-200 rounded-full animate-wavey animation-delay-200"></div>
+                  <div className="h-4 w-1 bg-pink-100 rounded-full animate-wavey animation-delay-[150ms]"></div>
+                  <div className="h-3 w-1 bg-pink-200 rounded-full animate-wavey animation-delay-300"></div>
+                  <div className="h-2 w-1 bg-pink-300 rounded-full animate-wavey animation-delay-[75ms]"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div className="text-5xl font-bold drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]">
+          <span className="text-orange-300">i</span>
+          <span className="text-sky-900">DNA</span>
+          <span className="text-orange-300">bet</span>
+          </div>
+        <h1 className="mt-5 text-2xl uppercase text-center">Upcoming Live Football Fixtures</h1>
+        <div className="mt-3 text-sm font-bold text-center">Please choose the match to put your bet</div>
+        </div>
         {
             renderMatches()
         }

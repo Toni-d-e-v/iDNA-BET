@@ -478,48 +478,35 @@ async function getBetsNumber(teamAddr){
             </div>
             <div className="mt-3 flex gap-2">
             <div className="bg-pink-400/70 mt-3 py-2 px-4 rounded-xl text-center backdrop-blur-md">
-            <table className="mt-5 table w-full border border-zinc-500 border-collapse">
-          <tbody>
-            <tr>
-              <td className="border border-zinc-500 p-3 text-lg">Handle</td>
-              <td className="border border-zinc-500 p-3 text-base font-bold"
-               id = "team1_handle"
-              ></td>
-            </tr>
-            <tr>
-              <td className="border border-zinc-500 p-3 text-lg">
-              Number of bettors
-              </td>
-              <td className="border border-zinc-500 p-3 text-base font-bold"
-              id="team1_bettors"
-              >
-            </td>
-          </tr>
+            <div className="mt-5 grid grid-cols-2 grid-rows-2 outline outline-zinc-500 w-full">
+          
+              <div className="border-r border-b border-dashed p-3 text-lg">Handle</div>
+              <div className="border-b border-dashed p-3 text-base font-bold" id="team1_handle"></div>
+          
+              <div className="border-r border-dashed p-3 text-lg">Number of bettors</div>
+              <div className="p-3 text-base font-bold" id="team1_bettors"></div>
           {
               user && (
-              <tr>
-                <td className="border border-zinc-500 p-3 text-lg">Your bet</td>
-                <td className="border border-zinc-500 p-3 text-base font-bold"
-                id="team1_bets">
-              </td>    
-            </tr>
+                <div className="border-r border-t border-b border-dashed p-3 text-lg">Your bet</div>
               )
           }
           {
               user && (
-              <tr>
-                <td className="border border-zinc-500 p-3 text-lg">Can win</td>
-                <td className="border border-zinc-500 p-3 text-base font-bold"
-                id="team1_canwin">
-              </td>    
-            </tr>
+                <div className="border-t border-b border-dashed p-3 text-base font-bold" id="team1_bets"></div>
               )
-          }          
-          
-
-          </tbody>
-          
-          <caption className="caption-bottom p-2">
+          }
+          {
+              user && (
+                <div className="border-r border-dashed p-3 text-lg">Can win</div>
+              )
+          }
+          {
+              user && (
+                <div className="p-3 text-base font-bold" id="team1_canwin"></div>    
+              )
+          }
+          </div>          
+          <div className="caption-bottom p-2">
             <div className="text-white flex items-center justify-center gap-2">
             <input type="number" id="team1_bet" placeholder='iDNA' className="rounded-lg border border-white/40 bg-white/30 backdrop-blur-md p-2 font-bold text-sky-900 placeholder-zinc-500 caret-pink-500 outline-pink-500"/>
               {
@@ -539,8 +526,7 @@ async function getBetsNumber(teamAddr){
                 )
               }
             </div>
-          </caption>
-        </table>
+          </div>
               
               </div>
             </div>
@@ -553,68 +539,55 @@ async function getBetsNumber(teamAddr){
             </div>
             <div className="mt-3 flex gap-2">
             <div className="bg-pink-400/70 mt-3 py-2 px-4 rounded-xl text-center backdrop-blur-md">
-            <table className="mt-5 table w-full border border-zinc-500 border-collapse">
-          <tbody>
-            <tr>
-              <td className="border border-zinc-500 p-3 text-lg">Handle</td>
-              <td className="border border-zinc-500 p-3 text-base font-bold"
-                id = "team2_handle"
-              ></td>
-            </tr>
-            <tr>
-              <td className="border border-zinc-500 p-3 text-lg">
-              Number of bettors
-              </td>
-              <td className="border border-zinc-500 p-3 text-base font-bold"
-              id="team2_bettors"
-              >
-
-              </td>
-              
-            </tr>
-            {
+            <div className="mt-5 grid grid-cols-2 grid-rows-2 outline outline-zinc-500 w-full">
+          
+              <div className="border-r border-b border-dashed p-3 text-lg">Handle</div>
+              <div className="border-b border-dashed p-3 text-base font-bold" id="team2_handle"></div>
+          
+              <div className="border-r border-dashed p-3 text-lg">Number of bettors</div>
+              <div className="p-3 text-base font-bold" id="team2_bettors"></div>
+          {
               user && (
-              <tr>
-                <td className="border border-zinc-500 p-3 text-lg">Your bet</td>
-                <td className="border border-zinc-500 p-3 text-base font-bold"
-                id="team2_bets">
-              </td>    
-            </tr>
+                <div className="border-r border-t border-b border-dashed p-3 text-lg">Your bet</div>
               )
           }
           {
               user && (
-              <tr>
-                <td className="border border-zinc-500 p-3 text-lg">Can win</td>
-                <td className="border border-zinc-500 p-3 text-base font-bold"
-                id="team2_canwin">
-              </td>    
-            </tr>
+                <div className="border-t border-b border-dashed p-3 text-base font-bold" id="team2_bets"></div>
               )
-          }   
-          </tbody>
-                <caption className="caption-bottom p-2">
-                  <div className="text-white flex items-center justify-center gap-2">
-                  <input type="number" id="team2_bet" placeholder='iDNA' className="rounded-lg border border-white/40 bg-white/30 backdrop-blur-md p-2 font-bold text-sky-900 placeholder-zinc-500 caret-pink-500 outline-pink-500"/>
-                    {
-                      user && (
-                        <div className="truncate cursor-pointer rounded-lg bg-pink-500 py-2.5 px-4 font-bold transition-colors hover:bg-sky-900 hover:shadow-lg"
-                        onClick={() => bet(team2_address, document.getElementById('team2_bet').value)}
-                        >
-                        Place Bet
-                      </div>
-                      )
-                    }
-                    {
-                      !user && (
-                        <div className="truncate cursor-pointer rounded-lg bg-pink-500 py-2.5 px-4 font-bold transition-colors hover:bg-sky-900 hover:shadow-lg">
-                        Sign in to place bet
-                        </div>
-                      )
-                    }
+          }
+          {
+              user && (
+                <div className="border-r border-dashed p-3 text-lg">Can win</div>
+              )
+          }
+          {
+              user && (
+                <div className="p-3 text-base font-bold" id="team2_canwin"></div>    
+              )
+          }
+          </div>          
+          <div className="caption-bottom p-2">
+            <div className="text-white flex items-center justify-center gap-2">
+            <input type="number" id="team2_bet" placeholder='iDNA' className="rounded-lg border border-white/40 bg-white/30 backdrop-blur-md p-2 font-bold text-sky-900 placeholder-zinc-500 caret-pink-500 outline-pink-500"/>
+              {
+                user && (
+                  <div className="truncate cursor-pointer rounded-lg bg-pink-500 py-2.5 px-4 font-bold transition-colors hover:bg-sky-900 hover:shadow-lg"
+                  onClick={() => bet(team2_address, document.getElementById('team2_bet').value)}
+                  >
+                  Place Bet
+                </div>
+                )
+              }
+              {
+                !user && (
+                  <div className="truncate cursor-pointer rounded-lg bg-pink-500 py-2.5 px-4 font-bold transition-colors hover:bg-sky-900 hover:shadow-lg">
+                  Sign in to place bet
                   </div>
-                </caption>
-              </table>
+                )
+              }
+            </div>
+          </div>
               
               </div>
             </div>
