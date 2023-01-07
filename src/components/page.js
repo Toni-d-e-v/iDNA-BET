@@ -464,21 +464,19 @@ async function getBetsNumber(teamAddr){
           <span className="text-sky-900">DNA</span>
           <span className="text-orange-300">bet</span>
           </div>
-          <div className="font-bold mt-3 text-base backdrop-blur-md
-            white-text
-          ">
+          <div className="font-bold mt-3 text-base backdrop-blur-md text-black text-center">
       Bets for the FINAL will be available after December 14th 9pm GMT.
           </div>
-          <div className="lg:grid grid-cols-2 grid-rows-1 gap-6">
+          <div className="lg:grid grid-cols-2 gap-6">
           <div className="mt-3">
-          <div className="white-text2  bg-pink-400/70 py-2 px-4 rounded-xl text-center backdrop-blur-md">
+            <div className="text-white bg-pink-400/70 py-2 px-4 rounded-xl text-center backdrop-blur-md">
             <h3>
               {team1}
             </h3>
             </div>
             <div className="mt-3 flex gap-2">
             <div className="bg-pink-400/70 mt-3 py-2 px-4 rounded-xl text-center backdrop-blur-md">
-            <div className="mt-5 grid grid-cols-2 grid-rows-2 outline outline-zinc-500 w-full">
+            <div className="mt-5 grid grid-cols-2 outline outline-zinc-500">
           
               <div className="border-r border-b border-dashed p-3 text-lg">Handle</div>
               <div className="border-b border-dashed p-3 text-base font-bold" id="team1_handle"></div>
@@ -511,9 +509,7 @@ async function getBetsNumber(teamAddr){
             <input type="number" id="team1_bet" placeholder='iDNA' className="rounded-lg border border-white/40 bg-white/30 backdrop-blur-md p-2 font-bold text-sky-900 placeholder-zinc-500 caret-pink-500 outline-pink-500"/>
               {
                 user && (
-                  <div className="truncate cursor-pointer rounded-lg bg-pink-500 py-2.5 px-4 font-bold transition-colors hover:bg-sky-900 hover:shadow-lg"
-                  onClick={() => bet(team1_address, document.getElementById('team1_bet').value)}
-                  >
+                  <div className="truncate cursor-pointer rounded-lg bg-pink-500 py-2.5 px-4 font-bold transition-colors hover:bg-sky-900 hover:shadow-lg" onClick={() => bet(team1_address, document.getElementById('team1_bet').value)}>
                   Place Bet
                 </div>
                 )
@@ -521,7 +517,7 @@ async function getBetsNumber(teamAddr){
               {
                 !user && (
                   <div className="truncate cursor-pointer rounded-lg bg-pink-500 py-2.5 px-4 font-bold transition-colors hover:bg-sky-900 hover:shadow-lg">
-                  Sign in to place bet
+                  Sign in
                   </div>
                 )
               }
@@ -532,14 +528,14 @@ async function getBetsNumber(teamAddr){
             </div>
           </div>
           <div className="mt-3">
-          <div className="white-text2 bg-pink-400/70 py-2 px-4 rounded-xl text-center backdrop-blur-md">
+          <div className="text-white bg-pink-400/70 py-2 px-4 rounded-xl text-center backdrop-blur-md">
             <h3>
               {team2}
             </h3>
             </div>
             <div className="mt-3 flex gap-2">
             <div className="bg-pink-400/70 mt-3 py-2 px-4 rounded-xl text-center backdrop-blur-md">
-            <div className="mt-5 grid grid-cols-2 grid-rows-2 outline outline-zinc-500 w-full">
+            <div className="mt-5 grid grid-cols-2 outline outline-zinc-500">
           
               <div className="border-r border-b border-dashed p-3 text-lg">Handle</div>
               <div className="border-b border-dashed p-3 text-base font-bold" id="team2_handle"></div>
@@ -572,9 +568,7 @@ async function getBetsNumber(teamAddr){
             <input type="number" id="team2_bet" placeholder='iDNA' className="rounded-lg border border-white/40 bg-white/30 backdrop-blur-md p-2 font-bold text-sky-900 placeholder-zinc-500 caret-pink-500 outline-pink-500"/>
               {
                 user && (
-                  <div className="truncate cursor-pointer rounded-lg bg-pink-500 py-2.5 px-4 font-bold transition-colors hover:bg-sky-900 hover:shadow-lg"
-                  onClick={() => bet(team2_address, document.getElementById('team2_bet').value)}
-                  >
+                  <div className="truncate cursor-pointer rounded-lg bg-pink-500 py-2.5 px-4 font-bold transition-colors hover:bg-sky-900 hover:shadow-lg" onClick={() => bet(team2_address, document.getElementById('team2_bet').value)}>
                   Place Bet
                 </div>
                 )
@@ -582,7 +576,7 @@ async function getBetsNumber(teamAddr){
               {
                 !user && (
                   <div className="truncate cursor-pointer rounded-lg bg-pink-500 py-2.5 px-4 font-bold transition-colors hover:bg-sky-900 hover:shadow-lg">
-                  Sign in to place bet
+                  Sign in
                   </div>
                 )
               }
