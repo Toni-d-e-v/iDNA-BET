@@ -19,7 +19,23 @@ function Menu() {
     "Team 4 Address",
     "INFO"
   ];
-  const [matches] = React.useState([Match1, Match2]);
+  let Match3 = [
+    new Date("2023-02-02 00:00:00"),
+    "Team 3",
+    "Team 4",
+    "Team 3 Address",
+    "Team 4 Address",
+    "INFO"
+  ];
+  let Match4 = [
+    new Date("2023-02-02 00:00:00"),
+    "Team 3",
+    "Team 4",
+    "Team 3 Address",
+    "Team 4 Address",
+    "INFO"
+  ];
+  const [matches] = React.useState([Match1, Match2, Match3, Match4]);
   const [page, setPage] = React.useState(0);
   const renderMatches = () => {
     return (
