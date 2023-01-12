@@ -391,11 +391,8 @@ async function getBetsNumber(teamAddr){
                 onClick={() => 
                     window.location.href = "/"
                 }>
-                <svg className="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
-                </svg>
+                <img width="50" src="./assets/images/gohome.png" onMouseOver={e => (e.currentTarget.src = "./assets/images/gohome.gif")} onMouseOut={e => (e.currentTarget.src = "./assets/images/gohome.png")} />
             </button>
-            
             <div className="font-bold text-2xl">
               <span className="text-sky-900">iDNA bet</span>
             </div>
