@@ -24,7 +24,15 @@ function Page(
   const team2 = data1[2];
   const team1_address = data1[3];
   const team2_address = data1[4];
-  console.log("data:", date, team1, team2, team1_address, team2_address);
+  const match_info = data1[5];
+  const team1_color1 = data1[6];
+  const team1_color2 = data1[7];
+  const team1_color3 = data1[8];
+  const team2_color1 = data1[9];
+  const team2_color2 = data1[10];
+  const team2_color3 = data1[11];
+
+  console.log("data:", date, team1, team2, team1_address, team2_address, match_info, team1_color1, team1_color2, team1_color3, team2_color1, team2_color2, team2_color3);
   const dispatch = useDispatch();
   const user = useSelector(state => state.general.user);
   const tokensSecured = useSelector(state => state.general.tokensSecured);
@@ -467,8 +475,8 @@ async function getBetsNumber(teamAddr){
           <div className="lg:grid grid-cols-2 gap-6">
           <div className="mt-3">
             <div className="text-white bg-pink-400/70 py-2 px-4 rounded-xl text-center backdrop-blur-md">
-            <h3>
-              {team1}
+            <h3 className="text-lg">
+              <span className={"text-[" + team1_color1 + "]"}>{team1?.substring(0,3)}</span><span className={"text-[" + team1_color2 + "]"}>{team1?.substring(3,5)}</span><span className={"text-[" + team1_color3 + "]"}>{team1?.substring(5)}</span>
             </h3>
             </div>
             <div className="mt-3 flex gap-2">
@@ -526,8 +534,8 @@ async function getBetsNumber(teamAddr){
           </div>
           <div className="mt-3">
           <div className="text-white bg-pink-400/70 py-2 px-4 rounded-xl text-center backdrop-blur-md">
-            <h3>
-              {team2}
+            <h3 className="text-lg">
+              <span className={"text-[" + team2_color1 + "]"}>{team2?.substring(0,2)}</span><span className={"text-[" + team2_color2 + "]"}>{team2?.substring(2,4)}</span><span className={"text-[" + team2_color3 + "]"}>{team2?.substring(4)}</span>
             </h3>
             </div>
             <div className="mt-3 flex gap-2">

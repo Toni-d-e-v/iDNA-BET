@@ -5,11 +5,17 @@ import Page from './page.js';
 function Menu() {
   let Match1 = [
     new Date("2023-02-02 00:00:00"),
-    "Team 1",
-    "Team 2",
+    "Bolivia",
+    "Argentina",
     "Team 1 Address",
     "Team 2 Address",
-    "INFO"
+    "INFO",
+    "#6CACE4",
+    "#FFFFFF",
+    "#FFB81C",
+    "#002654",
+    "#FFFFFF",
+    "#ED2939"
  ];
   let Match2 = [
     new Date("2023-02-02 00:00:00"),
@@ -17,7 +23,13 @@ function Menu() {
     "Team 4",
     "Team 3 Address",
     "Team 4 Address",
-    "INFO"
+    "INFO",
+    "#6CACE4",
+    "#FFFFFF",
+    "#FFB81C",
+    "#002654",
+    "#FFFFFF",
+    "#ED2939"
   ];
   let Match3 = [
     new Date("2023-02-02 00:00:00"),
@@ -25,7 +37,13 @@ function Menu() {
     "Team 4",
     "Team 3 Address",
     "Team 4 Address",
-    "INFO"
+    "INFO",
+    "#6CACE4",
+    "#FFFFFF",
+    "#FFB81C",
+    "#002654",
+    "#FFFFFF",
+    "#ED2939"
   ];
   let Match4 = [
     new Date("2023-02-02 00:00:00"),
@@ -33,7 +51,13 @@ function Menu() {
     "Team 4",
     "Team 3 Address",
     "Team 4 Address",
-    "INFO"
+    "INFO",
+    "#6CACE4",
+    "#FFFFFF",
+    "#FFB81C",
+    "#002654",
+    "#FFFFFF",
+    "#ED2939"
   ];
   const [matches] = React.useState([Match1, Match2, Match3, Match4]);
   const [page, setPage] = React.useState(0);
