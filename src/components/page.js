@@ -394,7 +394,7 @@ async function getBetsNumber(teamAddr){
                 <img width="50" src="./assets/images/gohome.png" onMouseOver={e => (e.currentTarget.src = "./assets/images/gohome.gif")} onMouseOut={e => (e.currentTarget.src = "./assets/images/gohome.png")} />
             </button>
             <div className="font-bold text-2xl">
-              <span className="text-sky-900">iDNA bet</span>
+              <span className="text-sky-900"><span className="text-orange-300 drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]">i</span>DNA<span className="text-orange-300 drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]">bet</span></span>
             </div>
           </div>
           <div className="block md:hidden ml-auto pr-4 my-auto cursor-pointer">
