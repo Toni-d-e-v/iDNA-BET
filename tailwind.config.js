@@ -3,6 +3,12 @@ module.exports = {
   content: [
     "./src/components/*.{js,jsx,ts,tsx}",
   ],
+  safelist: [
+    'text-[#D91023]',
+    'text-[#FFFFFF]',
+    'text-[#002654]',
+    'text-[#ED2939]'
+  ],
   theme: {
     extend: {
       animation: {

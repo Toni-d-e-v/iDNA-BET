@@ -5,17 +5,18 @@ import Page from './page.js';
 function Menu() {
   let Match1 = [
     new Date("2023-02-02 00:00:00"),
-    "Bolivia",
+    "Peru",
     "Argentina",
     "Team 1 Address",
     "Team 2 Address",
     "INFO",
-    "#6CACE4",
+    "#D91023",
     "#FFFFFF",
-    "#FFB81C",
+    "#D91023",
     "#002654",
     "#FFFFFF",
-    "#ED2939"
+    "#ED2939",
+    {t1_c1_s1: '0', t1_c1_s2: '1', t1_c2_s1: '1', t1_c2_s2: '3', t1_c3_s1: '3', t2_c1_s1: '0', t2_c1_s2: '2', t2_c2_s1: '2', t2_c2_s2: '4', t2_c3_s1: '4'}
  ];
   let Match2 = [
     new Date("2023-02-02 00:00:00"),
@@ -29,7 +30,8 @@ function Menu() {
     "#FFB81C",
     "#002654",
     "#FFFFFF",
-    "#ED2939"
+    "#ED2939",
+    {t1_c1_s1: '0', t1_c1_s2: '3', t1_c2_s1: '3', t1_c2_s2: '5', t1_c3_s1: '5', t2_c1_s1: '0', t2_c1_s2: '2', t2_c2_s1: '2', t2_c2_s2: '4', t2_c3_s1: '4'}
   ];
   let Match3 = [
     new Date("2023-02-02 00:00:00"),
@@ -43,7 +45,8 @@ function Menu() {
     "#FFB81C",
     "#002654",
     "#FFFFFF",
-    "#ED2939"
+    "#ED2939",
+    {t1_c1_s1: '0', t1_c1_s2: '3', t1_c2_s1: '3', t1_c2_s2: '5', t1_c3_s1: '5', t2_c1_s1: '0', t2_c1_s2: '2', t2_c2_s1: '2', t2_c2_s2: '4', t2_c3_s1: '4'}
   ];
   let Match4 = [
     new Date("2023-02-02 00:00:00"),
@@ -57,7 +60,8 @@ function Menu() {
     "#FFB81C",
     "#002654",
     "#FFFFFF",
-    "#ED2939"
+    "#ED2939",
+    {t1_c1_s1: '0', t1_c1_s2: '3', t1_c2_s1: '3', t1_c2_s2: '5', t1_c3_s1: '5', t2_c1_s1: '0', t2_c1_s2: '2', t2_c2_s1: '2', t2_c2_s2: '4', t2_c3_s1: '4'}
   ];
   const [matches] = React.useState([Match1, Match2, Match3, Match4]);
   const [page, setPage] = React.useState(0);
