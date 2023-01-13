@@ -41,8 +41,9 @@ function Page(
   const t2_c2_s1 = data1[12].t2_c2_s1;
   const t2_c2_s2 = data1[12].t2_c2_s2;
   const t2_c3_s1 = data1[12].t2_c3_s1;
+  const match_url = data1[13];
 
-  console.log("data:", date, team1, team2, team1_address, team2_address, match_info, team1_color1, team1_color2, team1_color3, team2_color1, team2_color2, team2_color3, t1_c1_s1, t1_c1_s2, t1_c2_s1, t1_c2_s2, t1_c3_s1, t2_c1_s1, t2_c1_s2, t2_c2_s1, t2_c2_s2, t2_c3_s1);
+  console.log("data:", date, team1, team2, team1_address, team2_address, match_info, team1_color1, team1_color2, team1_color3, team2_color1, team2_color2, team2_color3, t1_c1_s1, t1_c1_s2, t1_c2_s1, t1_c2_s2, t1_c3_s1, t2_c1_s1, t2_c1_s2, t2_c2_s1, t2_c2_s2, t2_c3_s1, match_url);
   const dispatch = useDispatch();
   const user = useSelector(state => state.general.user);
   const tokensSecured = useSelector(state => state.general.tokensSecured);
@@ -480,7 +481,7 @@ async function getBetsNumber(teamAddr){
           <span className="text-orange-300">bet</span>
           </div>
           <div className="font-bold mt-3 text-base backdrop-blur-md text-black text-center">
-      Bets for the FINAL will be available after December 14th 9pm GMT.
+      <span className="text-orange-800">Championship:</span> <a className="underline" href={match_url} target="_blank" rel="noopener noreferrer">{match_info}</a> <span className="text-orange-800">Date:</span> <span className="underline">{date.getDate()}/{date.getMonth() + 1}/{date.getFullYear()}</span>
           </div>
           <div className="lg:grid grid-cols-2 gap-6">
           <div className="mt-3">
