@@ -7,7 +7,10 @@ module.exports = {
     'text-[#D91023]',
     'text-[#FFFFFF]',
     'text-[#002654]',
-    'text-[#ED2939]'
+    'text-[#ED2939]',
+    'text-[#006434]',
+    'text-[#C6210B]',
+    'text-[#000000]',
   ],
   theme: {
     extend: {
