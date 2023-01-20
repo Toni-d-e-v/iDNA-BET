@@ -513,11 +513,13 @@ function Page(data) {
           <div className="lg:grid grid-cols-2 gap-6">
             <div className="mt-3">
               <div className="text-white bg-pink-400/70 py-2 px-4 rounded-xl text-center backdrop-blur-md">
-                <h3 className="text-lg">
-                  <span className={'text-[' + team1_color1 + ']'}>{team1?.substring(t1_c1_s1, t1_c1_s2)}</span>
-                  <span className={'text-[' + team1_color2 + ']'}>{team1?.substring(t1_c2_s1, t1_c2_s2)}</span>
-                  <span className={'text-[' + team1_color3 + ']'}>{team1?.substring(t1_c3_s1)}</span>
-                </h3>
+                <a className="" href={'https://scan.idena.io/contract/' + team1_address} target="_blank" rel="noopener noreferrer">
+                  <h3 className="text-lg">
+                    <span className={'text-[' + team1_color1 + ']'}>{team1?.substring(t1_c1_s1, t1_c1_s2)}</span>
+                    <span className={'text-[' + team1_color2 + ']'}>{team1?.substring(t1_c2_s1, t1_c2_s2)}</span>
+                    <span className={'text-[' + team1_color3 + ']'}>{team1?.substring(t1_c3_s1)}</span>
+                  </h3>
+                </a>
               </div>
               <div className="mt-3 flex gap-2">
                 <div className="bg-pink-400/70 mt-3 py-2 px-4 rounded-xl text-center backdrop-blur-md">
@@ -560,11 +562,13 @@ function Page(data) {
             </div>
             <div className="mt-3">
               <div className="text-white bg-pink-400/70 py-2 px-4 rounded-xl text-center backdrop-blur-md">
-                <h3 className="text-lg">
-                  <span className={'text-[' + team2_color1 + ']'}>{team2?.substring(t2_c1_s1, t2_c1_s2)}</span>
-                  <span className={'text-[' + team2_color2 + ']'}>{team2?.substring(t2_c2_s1, t2_c2_s2)}</span>
-                  <span className={'text-[' + team2_color3 + ']'}>{team2?.substring(t2_c3_s1)}</span>
-                </h3>
+                <a className="" href={'https://scan.idena.io/contract/' + team2_address} target="_blank" rel="noopener noreferrer">
+                  <h3 className="text-lg">
+                    <span className={'text-[' + team2_color1 + ']'}>{team2?.substring(t2_c1_s1, t2_c1_s2)}</span>
+                    <span className={'text-[' + team2_color2 + ']'}>{team2?.substring(t2_c2_s1, t2_c2_s2)}</span>
+                    <span className={'text-[' + team2_color3 + ']'}>{team2?.substring(t2_c3_s1)}</span>
+                  </h3>
+                </a>
               </div>
               <div className="mt-3 flex gap-2">
                 <div className="bg-pink-400/70 mt-3 py-2 px-4 rounded-xl text-center backdrop-blur-md">

@@ -4,20 +4,20 @@ import React from 'react';
 import Page from './page.js';
 function Menu() {
   let Match1 = [
-    new Date('2023-01-25 17:00:00 GMT-0500'),
-    'Coming soon',
-    'Coming soon',
-    'Team 1 Address',
-    'Team 2 Address',
-    'CONMEBOL SUB20',
-    '#D91023',
+    new Date('2023-01-28 14:30:00 GMT-0500'),
+    'Palmeiras',
+    'Flamengo',
+    '0x8e897f34a3072f7d56af67b10364e4eaf9d4b777',
+    '0x48CCa2E6A69e11e7FD577c0EF6cCA8937f1E10A9',
+    'Supercopa do Brasil',
+    '#006434',
     '#FFFFFF',
-    '#D91023',
-    '#002654',
+    '#006434',
     '#FFFFFF',
-    '#ED2939',
-    { t1_c1_s1: '0', t1_c1_s2: '1', t1_c2_s1: '1', t1_c2_s2: '3', t1_c3_s1: '3', t2_c1_s1: '0', t2_c1_s2: '2', t2_c2_s1: '2', t2_c2_s2: '4', t2_c3_s1: '4' },
-    'https://www.conmebol.com/noticias/la-conmebol-sub20-va-tomando-forma-y-confirmo-sus-grupos'
+    '#C6210B',
+    '#000000',
+    { t1_c1_s1: '0', t1_c1_s2: '3', t1_c2_s1: '3', t1_c2_s2: '6', t1_c3_s1: '6', t2_c1_s1: '0', t2_c1_s2: '3', t2_c2_s1: '3', t2_c2_s2: '6', t2_c3_s1: '6' },
+    'https://twitter.com/CBF_Futebol/status/1613692198910033922?cxt=HHwWhIDQzaqg_uQsAAAA'
   ];
   let Match2 = [
     new Date('2023-01-28 14:30:00 GMT-0500'),
@@ -36,36 +36,36 @@ function Menu() {
     'https://twitter.com/CBF_Futebol/status/1613692198910033922?cxt=HHwWhIDQzaqg_uQsAAAA'
   ];
   let Match3 = [
-    new Date('2023-02-16 12:45:00'),
-    'Coming soon',
-    'Coming soon',
-    'Team 3 Address',
-    'Team 4 Address',
-    'UEFA Europa Conference League play-off',
-    '#6CACE4',
+    new Date('2023-01-28 14:30:00 GMT-0500'),
+    'Palmeiras',
+    'Flamengo',
+    '0x8e897f34a3072f7d56af67b10364e4eaf9d4b777',
+    '0x48CCa2E6A69e11e7FD577c0EF6cCA8937f1E10A9',
+    'Supercopa do Brasil',
+    '#006434',
     '#FFFFFF',
-    '#FFB81C',
-    '#002654',
+    '#006434',
     '#FFFFFF',
-    '#ED2939',
-    { t1_c1_s1: '0', t1_c1_s2: '3', t1_c2_s1: '3', t1_c2_s2: '5', t1_c3_s1: '5', t2_c1_s1: '0', t2_c1_s2: '2', t2_c2_s1: '2', t2_c2_s2: '4', t2_c3_s1: '4' },
-    'https://es.uefa.com/uefaeuropaconferenceleague/fixtures-results/#/rd/2001691-1'
+    '#C6210B',
+    '#000000',
+    { t1_c1_s1: '0', t1_c1_s2: '3', t1_c2_s1: '3', t1_c2_s2: '6', t1_c3_s1: '6', t2_c1_s1: '0', t2_c1_s2: '3', t2_c2_s1: '3', t2_c2_s2: '6', t2_c3_s1: '6' },
+    'https://twitter.com/CBF_Futebol/status/1613692198910033922?cxt=HHwWhIDQzaqg_uQsAAAA'
   ];
   let Match4 = [
-    new Date('2023-02-02 00:00:00'),
-    'Coming soon',
-    'Coming soon',
-    'Team 3 Address',
-    'Team 4 Address',
-    'UEFA Europa Conference League play-off',
-    '#6CACE4',
+    new Date('2023-01-28 14:30:00 GMT-0500'),
+    'Palmeiras',
+    'Flamengo',
+    '0x8e897f34a3072f7d56af67b10364e4eaf9d4b777',
+    '0x48CCa2E6A69e11e7FD577c0EF6cCA8937f1E10A9',
+    'Supercopa do Brasil',
+    '#006434',
     '#FFFFFF',
-    '#FFB81C',
-    '#002654',
+    '#006434',
     '#FFFFFF',
-    '#ED2939',
-    { t1_c1_s1: '0', t1_c1_s2: '3', t1_c2_s1: '3', t1_c2_s2: '5', t1_c3_s1: '5', t2_c1_s1: '0', t2_c1_s2: '2', t2_c2_s1: '2', t2_c2_s2: '4', t2_c3_s1: '4' },
-    'https://es.uefa.com/uefaeuropaconferenceleague/fixtures-results/#/rd/2001691-2'
+    '#C6210B',
+    '#000000',
+    { t1_c1_s1: '0', t1_c1_s2: '3', t1_c2_s1: '3', t1_c2_s2: '6', t1_c3_s1: '6', t2_c1_s1: '0', t2_c1_s2: '3', t2_c2_s1: '3', t2_c2_s2: '6', t2_c3_s1: '6' },
+    'https://twitter.com/CBF_Futebol/status/1613692198910033922?cxt=HHwWhIDQzaqg_uQsAAAA'
   ];
   const [matches] = React.useState([Match1, Match2, Match3, Match4]);
   const [page, setPage] = React.useState(0);
