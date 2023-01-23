@@ -30,7 +30,12 @@ function Menu() {
     '#000000',
     { t1_c1_s1: '0', t1_c1_s2: '3', t1_c2_s1: '3', t1_c2_s2: '6', t1_c3_s1: '6', t2_c1_s1: '0', t2_c1_s2: '3', t2_c2_s1: '3', t2_c2_s2: '6', t2_c3_s1: '6' },
     'https://twitter.com/CBF_Futebol/status/1613692198910033922?cxt=HHwWhIDQzaqg_uQsAAAA',
-    'football'
+    'football',
+    {
+      c_title: 'Supercopa do Brasil',
+      c_description:
+        'The 2023 Supercopa do Brasil will be the sixth edition of Supercopa do Brasil, an annual football match played between the champions of the Campeonato Brasileiro Série A and Copa do Brasil. The match will be played on 28 January 2023 between Palmeiras and Flamengo, who qualified after winning the 2022 Campeonato Brasileiro Série A and the 2022 Copa do Brasil, respectively. On 11 January 2023, the CBF announced that the match will be hosted at Estádio Nacional Mané Garrincha in Brasília.'
+    }
   ];
   let Match2 = [
     new Date('2023-01-28T19:30:00Z'),
@@ -47,7 +52,12 @@ function Menu() {
     '#000000',
     { t1_c1_s1: '0', t1_c1_s2: '3', t1_c2_s1: '3', t1_c2_s2: '6', t1_c3_s1: '6', t2_c1_s1: '0', t2_c1_s2: '3', t2_c2_s1: '3', t2_c2_s2: '6', t2_c3_s1: '6' },
     'https://twitter.com/CBF_Futebol/status/1613692198910033922?cxt=HHwWhIDQzaqg_uQsAAAA',
-    'football'
+    'football',
+    {
+      c_title: 'Supercopa do Brasil',
+      c_description:
+        'The 2023 Supercopa do Brasil will be the sixth edition of Supercopa do Brasil, an annual football match played between the champions of the Campeonato Brasileiro Série A and Copa do Brasil. The match will be played on 28 January 2023 between Palmeiras and Flamengo, who qualified after winning the 2022 Campeonato Brasileiro Série A and the 2022 Copa do Brasil, respectively. On 11 January 2023, the CBF announced that the match will be hosted at Estádio Nacional Mané Garrincha in Brasília.'
+    }
   ];
   let Match3 = [
     new Date('2023-01-28T19:30:00Z'),
@@ -64,7 +74,12 @@ function Menu() {
     '#000000',
     { t1_c1_s1: '0', t1_c1_s2: '3', t1_c2_s1: '3', t1_c2_s2: '6', t1_c3_s1: '6', t2_c1_s1: '0', t2_c1_s2: '3', t2_c2_s1: '3', t2_c2_s2: '6', t2_c3_s1: '6' },
     'https://twitter.com/CBF_Futebol/status/1613692198910033922?cxt=HHwWhIDQzaqg_uQsAAAA',
-    'football'
+    'football',
+    {
+      c_title: 'Supercopa do Brasil',
+      c_description:
+        'The 2023 Supercopa do Brasil will be the sixth edition of Supercopa do Brasil, an annual football match played between the champions of the Campeonato Brasileiro Série A and Copa do Brasil. The match will be played on 28 January 2023 between Palmeiras and Flamengo, who qualified after winning the 2022 Campeonato Brasileiro Série A and the 2022 Copa do Brasil, respectively. On 11 January 2023, the CBF announced that the match will be hosted at Estádio Nacional Mané Garrincha in Brasília.'
+    }
   ];
   let Match4 = [
     // Q: why does GMT-0500 makes the date invalid in firefox?
@@ -83,7 +98,12 @@ function Menu() {
     '#000000',
     { t1_c1_s1: '0', t1_c1_s2: '3', t1_c2_s1: '3', t1_c2_s2: '6', t1_c3_s1: '6', t2_c1_s1: '0', t2_c1_s2: '3', t2_c2_s1: '3', t2_c2_s2: '6', t2_c3_s1: '6' },
     'https://twitter.com/CBF_Futebol/status/1613692198910033922?cxt=HHwWhIDQzaqg_uQsAAAA',
-    'football'
+    'football',
+    {
+      c_title: 'Supercopa do Brasil',
+      c_description:
+        'The 2023 Supercopa do Brasil will be the sixth edition of Supercopa do Brasil, an annual football match played between the champions of the Campeonato Brasileiro Série A and Copa do Brasil. The match will be played on 28 January 2023 between Palmeiras and Flamengo, who qualified after winning the 2022 Campeonato Brasileiro Série A and the 2022 Copa do Brasil, respectively. On 11 January 2023, the CBF announced that the match will be hosted at Estádio Nacional Mané Garrincha in Brasília.'
+    }
   ];
   const [matches] = React.useState([Match1, Match2, Match3, Match4]);
   const [page, setPage] = React.useState(0);

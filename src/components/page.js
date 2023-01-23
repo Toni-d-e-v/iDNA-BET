@@ -40,6 +40,8 @@ function Page(data) {
   const t2_c2_s2 = data1[12].t2_c2_s2;
   const t2_c3_s1 = data1[12].t2_c3_s1;
   const match_url = data1[13];
+  const champ_title = data1[15].c_title;
+  const champ_description = data1[15].c_description;
 
   console.log(
     'data:',
@@ -621,12 +623,8 @@ function Page(data) {
       <div className="bg-cover bg-center bg-fixed bg-gradient-to-b from-[#f7e9e2] to-[#dadef1]">
         <div className="pt-8 backdrop-blur-md">
           <div className=" max-w-screen-lg mx-auto text-zinc-900 dark:text-zinc-500">
-            <h2 className="text-3xl font-bold text-center text-zinc-500">The game will never be the same!</h2>
-            <p className="mt-4 text-3xl font-bold text-center text-zinc-500">
-              Experience the first bet challenge in iDNA.
-              <br />
-              Place a bet on the Final Match of FIFA World Cup 2022 and WIN with your favorite team!
-            </p>
+            <h2 className="text-3xl font-bold text-center text-zinc-500">{champ_title}</h2>
+            <p className="mt-4 text-2xl font-bold text-justify text-zinc-500">{champ_description}</p>
             <div className="mt-10 pb-10 flex flex-wrap justify-center gap-3">
               <div className="timer-circle">
                 <div>
