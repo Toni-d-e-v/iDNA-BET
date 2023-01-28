@@ -149,7 +149,7 @@ function Page(data) {
       let callbackUrl = 'https://i-bet.top?txsent=true';
       let tx_url = 'https://app.idena.io/dna/raw?tx=' + result.result + '&callback_format=html&callback_url=' + callbackUrl;
       window.open(tx_url, '_blank').focus();
-      toast.success('Bet sent successfully');
+      // toast.success('Bet sent successfully');
       // set bet_placed to true
       setBet_placed(true);
     } catch (err) {
@@ -624,7 +624,7 @@ function Page(data) {
         <div className="pt-8 backdrop-blur-md">
           <div className=" max-w-screen-lg mx-auto text-zinc-900 dark:text-zinc-500">
             <h2 className="text-3xl font-bold text-center text-zinc-500">{champ_title}</h2>
-            <p className="mt-4 text-2xl font-bold text-justify text-zinc-500">{champ_description}</p>
+            <p className="my-4 mx-6 text-xl font-bold text-justify text-zinc-500">{champ_description}</p>
             <div className="mt-10 pb-10 flex flex-wrap justify-center gap-3">
               <div className="timer-circle">
                 <div>
