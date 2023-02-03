@@ -26,22 +26,25 @@ function Page(data) {
   const team1_color1 = data1[6];
   const team1_color2 = data1[7];
   const team1_color3 = data1[8];
-  const team2_color1 = data1[9];
-  const team2_color2 = data1[10];
-  const team2_color3 = data1[11];
-  const t1_c1_s1 = data1[12].t1_c1_s1;
-  const t1_c1_s2 = data1[12].t1_c1_s2;
-  const t1_c2_s1 = data1[12].t1_c2_s1;
-  const t1_c2_s2 = data1[12].t1_c2_s2;
-  const t1_c3_s1 = data1[12].t1_c3_s1;
-  const t2_c1_s1 = data1[12].t2_c1_s1;
-  const t2_c1_s2 = data1[12].t2_c1_s2;
-  const t2_c2_s1 = data1[12].t2_c2_s1;
-  const t2_c2_s2 = data1[12].t2_c2_s2;
-  const t2_c3_s1 = data1[12].t2_c3_s1;
-  const match_url = data1[13];
-  const champ_title = data1[15].c_title;
-  const champ_description = data1[15].c_description;
+  const team1_color4 = data1[9];
+  const team2_color1 = data1[10];
+  const team2_color2 = data1[11];
+  const team2_color3 = data1[12];
+  const t1_c1_s1 = data1[13].t1_c1_s1;
+  const t1_c1_s2 = data1[13].t1_c1_s2;
+  const t1_c2_s1 = data1[13].t1_c2_s1;
+  const t1_c2_s2 = data1[13].t1_c2_s2;
+  const t1_c3_s1 = data1[13].t1_c3_s1;
+  const t1_c3_s2 = data1[13].t1_c3_s2;
+  const t1_c4_s1 = data1[13].t1_c4_s1;
+  const t2_c1_s1 = data1[13].t2_c1_s1;
+  const t2_c1_s2 = data1[13].t2_c1_s2;
+  const t2_c2_s1 = data1[13].t2_c2_s1;
+  const t2_c2_s2 = data1[13].t2_c2_s2;
+  const t2_c3_s1 = data1[13].t2_c3_s1;
+  const match_url = data1[14];
+  const champ_title = data1[16].c_title;
+  const champ_description = data1[16].c_description;
 
   console.log(
     'data:',
@@ -519,7 +522,8 @@ function Page(data) {
                   <h3 className="text-lg">
                     <span className={'text-[' + team1_color1 + ']'}>{team1?.substring(t1_c1_s1, t1_c1_s2)}</span>
                     <span className={'text-[' + team1_color2 + ']'}>{team1?.substring(t1_c2_s1, t1_c2_s2)}</span>
-                    <span className={'text-[' + team1_color3 + ']'}>{team1?.substring(t1_c3_s1)}</span>
+                    <span className={'text-[' + team1_color3 + ']'}>{team1?.substring(t1_c3_s1, t1_c3_s2)}</span>
+                    <span className={'text-[' + team1_color4 + ']'}>{team1?.substring(t1_c4_s1)}</span>
                   </h3>
                 </a>
               </div>
