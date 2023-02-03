@@ -45,7 +45,7 @@ function Page(data) {
   const match_url = data1[14];
   const champ_title = data1[16].c_title;
   const champ_description = data1[16].c_description;
-
+  const bet_lock = data1[17];
   console.log(
     'data:',
     date,
@@ -544,6 +544,7 @@ function Page(data) {
                     <div className="text-white flex items-center justify-center gap-2">
                       <input
                         type="number"
+                        disabled={bet_lock}
                         id="team1_bet"
                         placeholder="iDNA"
                         className="rounded-lg border border-white/40 bg-white/30 backdrop-blur-md p-2 font-bold text-sky-900 placeholder-zinc-500 caret-pink-500 outline-pink-500"
@@ -593,6 +594,7 @@ function Page(data) {
                     <div className="text-white flex items-center justify-center gap-2">
                       <input
                         type="number"
+                        disabled={bet_lock}
                         id="team2_bet"
                         placeholder="iDNA"
                         className="rounded-lg border border-white/40 bg-white/30 backdrop-blur-md p-2 font-bold text-sky-900 placeholder-zinc-500 caret-pink-500 outline-pink-500"
