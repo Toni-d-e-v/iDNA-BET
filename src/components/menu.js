@@ -50,7 +50,10 @@ function Menu() {
       c_description:
         'The Super Bowl is the annual final playoff game of the National Football League to determine the league champion. It has served as the final game of every NFL season since 1966, replacing the NFL Championship Game. Since 2022, the game is played on the second Sunday in February.'
     },
-    false
+    {
+      bet_lock: false,
+      bet_lock_message: 'Bets open on'
+    }
   ];
   let Match2 = [
     new Date('2023-02-19T01:00:00Z'),
@@ -87,7 +90,10 @@ function Menu() {
       c_description:
         'The 2023 NHL Stadium Series is an upcoming outdoor regular season National Hockey League (NHL) game, part of the Stadium Series of games. The game will take place on February 18, 2023, at Carter–Finley Stadium in Raleigh, North Carolina, with the Carolina Hurricanes hosting the Washington Capitals. The Hurricanes were originally scheduled to host the 2021 Stadium Series but the game was canceled due to the COVID-19 pandemic.'
     },
-    false
+    {
+      bet_lock: false,
+      bet_lock_message: 'Bets open on'
+    }
   ];
   let Match3 = [
     new Date('2023-02-23T20:00:00Z'),
@@ -124,7 +130,10 @@ function Menu() {
       c_description:
         'Eight ties were set as the UEFA Europa Conference League hopefuls found out their opponents for a place in the last 16. The eight Europa Conference League runners-up were placed in the seeded pot; the eight sides transferring from the UEFA Europa League were in the unseeded pot. One team was drawn from each, with seeded sides playing the return legs at home. Clubs from the same association could not be drawn against each other.'
     },
-    false
+    {
+      bet_lock: false,
+      bet_lock_message: 'Bets open on'
+    }
   ];
   let Match4 = [
     // Q: why does GMT-0500 makes the date invalid in firefox?
@@ -163,7 +172,10 @@ function Menu() {
       c_description:
         'The 2023 ICC Women`s T20 World Cup is scheduled to be the eighth edition of ICC Women`s T20 World Cup tournament. It is scheduled to be held in South Africa, from 10 to 26 February 2023. Australia are the defending champions.'
     },
-    true
+    {
+      bet_lock: true,
+      bet_lock_message: 'Bets open on Feb 24th'
+    }
   ];
   const [matches] = React.useState([Match1, Match2, Match3, Match4]);
   const [page, setPage] = React.useState(0);

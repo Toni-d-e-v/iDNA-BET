@@ -45,7 +45,8 @@ function Page(data) {
   const match_url = data1[14];
   const champ_title = data1[16].c_title;
   const champ_description = data1[16].c_description;
-  const bet_lock = data1[17];
+  const bet_lock = data1[17].bet_lock;
+  const bet_lock_message = data1[17].bet_lock_message;
   console.log(
     'data:',
     date,
@@ -546,7 +547,7 @@ function Page(data) {
                         type="number"
                         disabled={bet_lock}
                         id="team1_bet"
-                        placeholder="iDNA"
+                        placeholder={bet_lock ? bet_lock_message : 'iDNA'}
                         className="rounded-lg border border-white/40 bg-white/30 backdrop-blur-md p-2 font-bold text-sky-900 placeholder-zinc-500 caret-pink-500 outline-pink-500"
                       />
                       {user && (
@@ -596,7 +597,7 @@ function Page(data) {
                         type="number"
                         disabled={bet_lock}
                         id="team2_bet"
-                        placeholder="iDNA"
+                        placeholder={bet_lock ? bet_lock_message : 'iDNA'}
                         className="rounded-lg border border-white/40 bg-white/30 backdrop-blur-md p-2 font-bold text-sky-900 placeholder-zinc-500 caret-pink-500 outline-pink-500"
                       />
                       {user && (
