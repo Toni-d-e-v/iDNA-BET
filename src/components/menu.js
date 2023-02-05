@@ -174,7 +174,7 @@ function Menu() {
     },
     {
       bet_lock: true,
-      bet_lock_message: 'Opens on Feb 24th'
+      bet_lock_message: 'Betting starts Feb 24th'
     }
   ];
   const [matches] = React.useState([Match1, Match2, Match3, Match4]);
@@ -383,7 +383,7 @@ function Menu() {
               <span className="text-sky-900">DNA</span>
               <span className="text-orange-300">bet</span>
             </div>
-            <h1 className="mt-5 text-2xl uppercase text-center">Upcoming Live Football Fixtures</h1>
+            <h1 className="mt-5 text-2xl uppercase text-center">Upcoming Live Sports Fixtures</h1>
             <div className="mt-3 text-sm font-bold text-center">Please choose the match to put your bet</div>
           </div>
           {renderMatches()}
