@@ -384,7 +384,7 @@ function Menu() {
               <span className="text-orange-300">bet</span>
             </div>
             <h1 className="mt-5 text-2xl uppercase text-center">Upcoming Live Sports Fixtures</h1>
-            <div className="mt-3 text-sm font-bold text-center">Please choose the match to put your bet</div>
+            <div className="mt-3 text-sm font-bold text-center">Simply select the match and make your bet:</div>
           </div>
           {renderMatches()}
         </div>
