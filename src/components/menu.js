@@ -12,7 +12,39 @@ export const Tooltip = function Tooltip({ message, children }) {
       </span>
     </div>
   );
-};
+}; 
+async function getUnixTimestamp(teamAddr){
+  // get data from node
+  let data={
+      "method": "contract_readData",
+      "params": [
+          teamAddr,
+          "depositDeadline",
+          "uint64"
+      ],
+      "id": 1,
+      "key": "idena-restricted-node-key"
+  }
+  let response = fetch("https://restricted.idena.io", {
+      method: 'POST',
+      body: JSON.stringify(data),
+      headers: {
+          'Content-Type': 'application/json'
+      }
+  });
+  // return unix timestamp
+  return await response.then(res => res.json()).then(res => res.result);
+}
+async function isLocked(teamAddr){
+  let unix = await getUnixTimestamp(teamAddr);
+  console.log("UNIQ",unix);
+  let now = new Date().getTime();
+  if (unix > now){
+    return false;
+  }
+  return true;
+
+}
 
 function Menu() {
   let Match1 = [
@@ -51,8 +83,8 @@ function Menu() {
         'The Super Bowl is the annual final playoff game of the National Football League to determine the league champion. It has served as the final game of every NFL season since 1966, replacing the NFL Championship Game. Since 2022, the game is played on the second Sunday in February.'
     },
     {
-      bet_lock: false,
-      bet_lock_message: 'Opens on'
+      bet_lock: isLocked('0x75aa9d7ecddbfc4a8615d82845bbc5ff0384fb5d'),
+      bet_lock_message: isLocked('0x75aa9d7ecddbfc4a8615d82845bbc5ff0384fb5d') ? 'Opens on' : 'Bets are locked'
     }
   ];
   let Match2 = [
