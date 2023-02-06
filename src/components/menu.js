@@ -120,8 +120,8 @@ function Menu() {
     },
     {
       bet_lock: '',
-      bet_lock_auto: isLocked('0x75aa9d7ecddbfc4a8615d82845bbc5ff0384fb5d'),
-      bet_lock_auto_message: isLocked('0x75aa9d7ecddbfc4a8615d82845bbc5ff0384fb5d') ? 'iDNA' : 'Bets are closed'
+      bet_lock_auto: isLocked('0xc497e389ca9c4e733b442cb2a2917ce13195ab39'),
+      bet_lock_auto_message: isLocked('0xc497e389ca9c4e733b442cb2a2917ce13195ab39') ? 'iDNA' : 'Bets are closed'
     }
   ];
   let Match3 = [
@@ -161,8 +161,8 @@ function Menu() {
     },
     {
       bet_lock: '',
-      bet_lock_auto: isLocked('0x75aa9d7ecddbfc4a8615d82845bbc5ff0384fb5d'),
-      bet_lock_auto_message: isLocked('0x75aa9d7ecddbfc4a8615d82845bbc5ff0384fb5d') ? 'iDNA' : 'Bets are closed'
+      bet_lock_auto: isLocked('0xc8b03a027b1cf53fa54e670309b05a804eb7e7dd'),
+      bet_lock_auto_message: isLocked('0xc8b03a027b1cf53fa54e670309b05a804eb7e7dd') ? 'iDNA' : 'Bets are closed'
     }
   ];
   let Match4 = [
