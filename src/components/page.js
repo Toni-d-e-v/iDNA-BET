@@ -30,24 +30,27 @@ function Page(data) {
   const team2_color1 = data1[10];
   const team2_color2 = data1[11];
   const team2_color3 = data1[12];
-  const t1_c1_s1 = data1[13].t1_c1_s1;
-  const t1_c1_s2 = data1[13].t1_c1_s2;
-  const t1_c2_s1 = data1[13].t1_c2_s1;
-  const t1_c2_s2 = data1[13].t1_c2_s2;
-  const t1_c3_s1 = data1[13].t1_c3_s1;
-  const t1_c3_s2 = data1[13].t1_c3_s2;
-  const t1_c4_s1 = data1[13].t1_c4_s1;
-  const t2_c1_s1 = data1[13].t2_c1_s1;
-  const t2_c1_s2 = data1[13].t2_c1_s2;
-  const t2_c2_s1 = data1[13].t2_c2_s1;
-  const t2_c2_s2 = data1[13].t2_c2_s2;
-  const t2_c3_s1 = data1[13].t2_c3_s1;
-  const match_url = data1[14];
-  const champ_title = data1[16].c_title;
-  const champ_description = data1[16].c_description;
-  const bet_lock = data1[17].bet_lock;
-  const bet_lock_auto = data1[17].bet_lock_auto;
-  const bet_lock_auto_message = data1[17].bet_lock_auto_message;
+  const team2_color4 = data1[13];
+  const t1_c1_s1 = data1[14].t1_c1_s1;
+  const t1_c1_s2 = data1[14].t1_c1_s2;
+  const t1_c2_s1 = data1[14].t1_c2_s1;
+  const t1_c2_s2 = data1[14].t1_c2_s2;
+  const t1_c3_s1 = data1[14].t1_c3_s1;
+  const t1_c3_s2 = data1[14].t1_c3_s2;
+  const t1_c4_s1 = data1[14].t1_c4_s1;
+  const t2_c1_s1 = data1[14].t2_c1_s1;
+  const t2_c1_s2 = data1[14].t2_c1_s2;
+  const t2_c2_s1 = data1[14].t2_c2_s1;
+  const t2_c2_s2 = data1[14].t2_c2_s2;
+  const t2_c3_s1 = data1[14].t2_c3_s1;
+  const t2_c3_s2 = data1[14].t2_c3_s2;
+  const t2_c4_s1 = data1[14].t2_c4_s1;
+  const match_url = data1[15];
+  const champ_title = data1[17].c_title;
+  const champ_description = data1[17].c_description;
+  const bet_lock = data1[18].bet_lock;
+  const bet_lock_auto = data1[18].bet_lock_auto;
+  const bet_lock_auto_message = data1[18].bet_lock_auto_message;
 
   console.log(
     'data:',
@@ -60,20 +63,31 @@ function Page(data) {
     team1_color1,
     team1_color2,
     team1_color3,
+    team1_color4,
     team2_color1,
     team2_color2,
     team2_color3,
+    team2_color4,
     t1_c1_s1,
     t1_c1_s2,
     t1_c2_s1,
     t1_c2_s2,
     t1_c3_s1,
+    t1_c3_s2,
+    t1_c4_s1,
     t2_c1_s1,
     t2_c1_s2,
     t2_c2_s1,
     t2_c2_s2,
     t2_c3_s1,
-    match_url
+    t2_c3_s2,
+    t2_c4_s1,
+    match_url,
+    champ_title,
+    champ_description,
+    bet_lock,
+    bet_lock_auto,
+    bet_lock_auto_message
   );
   const dispatch = useDispatch();
   const user = useSelector(state => state.general.user);
@@ -574,9 +588,10 @@ function Page(data) {
               <div className="text-white bg-pink-400/70 py-2 px-4 rounded-xl text-center backdrop-blur-md">
                 <a className="" href={'https://scan.idena.io/contract/' + team2_address} target="_blank" rel="noopener noreferrer">
                   <h3 className="text-lg">
-                    <span className={'text-[' + team2_color1 + ']'}>{team2?.substring(t2_c1_s1, t2_c1_s2)}</span>
-                    <span className={'text-[' + team2_color2 + ']'}>{team2?.substring(t2_c2_s1, t2_c2_s2)}</span>
-                    <span className={'text-[' + team2_color3 + ']'}>{team2?.substring(t2_c3_s1)}</span>
+                    <span className={'text-[' + team2_color1 + ']'}>{team2?.substring(t1_c1_s1, t1_c1_s2)}</span>
+                    <span className={'text-[' + team2_color2 + ']'}>{team2?.substring(t1_c2_s1, t1_c2_s2)}</span>
+                    <span className={'text-[' + team2_color3 + ']'}>{team2?.substring(t1_c3_s1, t1_c3_s2)}</span>
+                    <span className={'text-[' + team2_color4 + ']'}>{team2?.substring(t1_c4_s1)}</span>
                   </h3>
                 </a>
               </div>
@@ -598,7 +613,7 @@ function Page(data) {
                       <input
                         type="number"
                         disabled={bet_lock || !bet_lock_auto}
-                        id="team1_bet"
+                        id="team2_bet"
                         placeholder={bet_lock ? bet_lock : bet_lock_auto_message}
                         className="rounded-lg border border-white/40 bg-white/30 backdrop-blur-md p-2 font-bold text-sky-900 placeholder-zinc-500 caret-pink-500 outline-pink-500"
                       />

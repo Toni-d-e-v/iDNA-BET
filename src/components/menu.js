@@ -68,7 +68,9 @@ function Menu() {
       t2_c1_s2: '5',
       t2_c2_s1: '5',
       t2_c2_s2: '8',
-      t2_c3_s1: '8'
+      t2_c3_s1: '8',
+      t2_c3_s2: '8',
+      t2_c4_s1: '8'
     },
     'https://www.espn.com/nfl/schedule/_/week/5/year/2022/seasontype/3',
     'football',
