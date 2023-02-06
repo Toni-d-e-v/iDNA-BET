@@ -12,38 +12,33 @@ export const Tooltip = function Tooltip({ message, children }) {
       </span>
     </div>
   );
-}; 
-async function getUnixTimestamp(teamAddr){
+};
+async function getUnixTimestamp(teamAddr) {
   // get data from node
-  let data={
-      "method": "contract_readData",
-      "params": [
-          teamAddr,
-          "depositDeadline",
-          "uint64"
-      ],
-      "id": 1,
-      "key": "idena-restricted-node-key"
-  }
-  let response = fetch("https://restricted.idena.io", {
-      method: 'POST',
-      body: JSON.stringify(data),
-      headers: {
-          'Content-Type': 'application/json'
-      }
+  let data = {
+    method: 'contract_readData',
+    params: [teamAddr, 'depositDeadline', 'uint64'],
+    id: 1,
+    key: 'idena-restricted-node-key'
+  };
+  let response = fetch('https://restricted.idena.io', {
+    method: 'POST',
+    body: JSON.stringify(data),
+    headers: {
+      'Content-Type': 'application/json'
+    }
   });
   // return unix timestamp
   return await response.then(res => res.json()).then(res => res.result);
 }
-async function isLocked(teamAddr){
+async function isLocked(teamAddr) {
   let unix = await getUnixTimestamp(teamAddr);
-  console.log("UNIQ",unix);
+  console.log('UNIQ', unix);
   let now = new Date().getTime();
-  if (unix > now){
+  if (unix > now) {
     return false;
   }
   return true;
-
 }
 
 function Menu() {
@@ -83,8 +78,9 @@ function Menu() {
         'The Super Bowl is the annual final playoff game of the National Football League to determine the league champion. It has served as the final game of every NFL season since 1966, replacing the NFL Championship Game. Since 2022, the game is played on the second Sunday in February.'
     },
     {
-      bet_lock: isLocked('0x75aa9d7ecddbfc4a8615d82845bbc5ff0384fb5d'),
-      bet_lock_message: isLocked('0x75aa9d7ecddbfc4a8615d82845bbc5ff0384fb5d') ? 'Opens on' : 'Bets are locked'
+      bet_lock: '',
+      bet_lock_auto: isLocked('0x75aa9d7ecddbfc4a8615d82845bbc5ff0384fb5d'),
+      bet_lock_auto_message: isLocked('0x75aa9d7ecddbfc4a8615d82845bbc5ff0384fb5d') ? 'iDNA' : 'Bets are closed'
     }
   ];
   let Match2 = [
@@ -94,9 +90,9 @@ function Menu() {
     '0xc497e389ca9c4e733b442cb2a2917ce13195ab39',
     '0x9cd0ed237a281f9501fca405a799fd0083cd6f7b',
     'NHL Stadium Series',
-    '#C9243F',
+    '#E13A3E',
     '#FFFFFF',
-    '#C9243F',
+    '#231F20',
     '#FFFFFF',
     '#014751',
     '#FFFFFF',
@@ -105,10 +101,10 @@ function Menu() {
       t1_c1_s1: '0',
       t1_c1_s2: '1',
       t1_c2_s1: '1',
-      t1_c2_s2: '7',
-      t1_c3_s1: '7',
-      t1_c3_s2: '8',
-      t1_c4_s1: '8',
+      t1_c2_s2: '11',
+      t1_c3_s1: '11',
+      t1_c3_s2: '12',
+      t1_c4_s1: '12',
       t2_c1_s1: '0',
       t2_c1_s2: '5',
       t2_c2_s1: '5',
@@ -123,8 +119,9 @@ function Menu() {
         'The 2023 NHL Stadium Series is an upcoming outdoor regular season National Hockey League (NHL) game, part of the Stadium Series of games. The game will take place on February 18, 2023, at Carter–Finley Stadium in Raleigh, North Carolina, with the Carolina Hurricanes hosting the Washington Capitals. The Hurricanes were originally scheduled to host the 2021 Stadium Series but the game was canceled due to the COVID-19 pandemic.'
     },
     {
-      bet_lock: false,
-      bet_lock_message: 'Opens on'
+      bet_lock: '',
+      bet_lock_auto: isLocked('0x75aa9d7ecddbfc4a8615d82845bbc5ff0384fb5d'),
+      bet_lock_auto_message: isLocked('0x75aa9d7ecddbfc4a8615d82845bbc5ff0384fb5d') ? 'iDNA' : 'Bets are closed'
     }
   ];
   let Match3 = [
@@ -163,8 +160,9 @@ function Menu() {
         'Eight ties were set as the UEFA Europa Conference League hopefuls found out their opponents for a place in the last 16. The eight Europa Conference League runners-up were placed in the seeded pot; the eight sides transferring from the UEFA Europa League were in the unseeded pot. One team was drawn from each, with seeded sides playing the return legs at home. Clubs from the same association could not be drawn against each other.'
     },
     {
-      bet_lock: false,
-      bet_lock_message: 'Opens on'
+      bet_lock: '',
+      bet_lock_auto: isLocked('0x75aa9d7ecddbfc4a8615d82845bbc5ff0384fb5d'),
+      bet_lock_auto_message: isLocked('0x75aa9d7ecddbfc4a8615d82845bbc5ff0384fb5d') ? 'iDNA' : 'Bets are closed'
     }
   ];
   let Match4 = [
@@ -205,8 +203,9 @@ function Menu() {
         'The 2023 ICC Women`s T20 World Cup is scheduled to be the eighth edition of ICC Women`s T20 World Cup tournament. It is scheduled to be held in South Africa, from 10 to 26 February 2023. Australia are the defending champions.'
     },
     {
-      bet_lock: true,
-      bet_lock_message: 'Betting starts Feb 24th'
+      bet_lock: 'Betting starts Feb 24th',
+      bet_lock_auto: isLocked('0x75aa9d7ecddbfc4a8615d82845bbc5ff0384fb5d'),
+      bet_lock_auto_message: isLocked('0x75aa9d7ecddbfc4a8615d82845bbc5ff0384fb5d') ? 'iDNA' : 'Bets are closed'
     }
   ];
   const [matches] = React.useState([Match1, Match2, Match3, Match4]);

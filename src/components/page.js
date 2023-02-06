@@ -46,7 +46,9 @@ function Page(data) {
   const champ_title = data1[16].c_title;
   const champ_description = data1[16].c_description;
   const bet_lock = data1[17].bet_lock;
-  const bet_lock_message = data1[17].bet_lock_message;
+  const bet_lock_auto = data1[17].bet_lock_auto;
+  const bet_lock_auto_message = data1[17].bet_lock_auto_message;
+
   console.log(
     'data:',
     date,
@@ -545,9 +547,9 @@ function Page(data) {
                     <div className="text-white flex items-center justify-center gap-2">
                       <input
                         type="number"
-                        disabled={bet_lock}
+                        disabled={bet_lock || !bet_lock_auto}
                         id="team1_bet"
-                        placeholder={bet_lock ? bet_lock_message : 'iDNA'}
+                        placeholder={bet_lock ? bet_lock : bet_lock_auto_message}
                         className="rounded-lg border border-white/40 bg-white/30 backdrop-blur-md p-2 font-bold text-sky-900 placeholder-zinc-500 caret-pink-500 outline-pink-500"
                       />
                       {user && (
@@ -595,9 +597,9 @@ function Page(data) {
                     <div className="text-white flex items-center justify-center gap-2">
                       <input
                         type="number"
-                        disabled={bet_lock}
-                        id="team2_bet"
-                        placeholder={bet_lock ? bet_lock_message : 'iDNA'}
+                        disabled={bet_lock || !bet_lock_auto}
+                        id="team1_bet"
+                        placeholder={bet_lock ? bet_lock : bet_lock_auto_message}
                         className="rounded-lg border border-white/40 bg-white/30 backdrop-blur-md p-2 font-bold text-sky-900 placeholder-zinc-500 caret-pink-500 outline-pink-500"
                       />
                       {user && (
