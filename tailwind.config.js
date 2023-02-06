@@ -13,7 +13,15 @@ module.exports = {
     'text-[#28B858]',
     'text-[#014751]',
     'text-[#E13A3E]',
-    'text-[#231F20]'
+    'text-[#231F20]',
+    'text-[#E13A3E]',
+    'text-[#002B5D]',
+    'text-[#C81025]',
+    'text-[#101010]',
+    'text-[#553184]',
+    'text-[#D6221B]',
+    'text-[#C9271A]',
+    'text-[#2C2079]'
   ],
   theme: {
     extend: {

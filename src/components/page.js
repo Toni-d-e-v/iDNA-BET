@@ -588,10 +588,10 @@ function Page(data) {
               <div className="text-white bg-pink-400/70 py-2 px-4 rounded-xl text-center backdrop-blur-md">
                 <a className="" href={'https://scan.idena.io/contract/' + team2_address} target="_blank" rel="noopener noreferrer">
                   <h3 className="text-lg">
-                    <span className={'text-[' + team2_color1 + ']'}>{team2?.substring(t1_c1_s1, t1_c1_s2)}</span>
-                    <span className={'text-[' + team2_color2 + ']'}>{team2?.substring(t1_c2_s1, t1_c2_s2)}</span>
-                    <span className={'text-[' + team2_color3 + ']'}>{team2?.substring(t1_c3_s1, t1_c3_s2)}</span>
-                    <span className={'text-[' + team2_color4 + ']'}>{team2?.substring(t1_c4_s1)}</span>
+                    <span className={'text-[' + team2_color1 + ']'}>{team2?.substring(t2_c1_s1, t2_c1_s2)}</span>
+                    <span className={'text-[' + team2_color2 + ']'}>{team2?.substring(t2_c2_s1, t2_c2_s2)}</span>
+                    <span className={'text-[' + team2_color3 + ']'}>{team2?.substring(t2_c3_s1, t2_c3_s2)}</span>
+                    <span className={'text-[' + team2_color4 + ']'}>{team2?.substring(t2_c4_s1)}</span>
                   </h3>
                 </a>
               </div>
