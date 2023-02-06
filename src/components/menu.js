@@ -230,7 +230,7 @@ function Menu() {
       <div className="text-center lg:mx-20 md:mx-1 mt-10 grid grid-cols-2 lg:gap-6 md:gap-3 justify-items-center text-blue-500">
         {matches.map((match, index) =>
           // filter matches by type
-          match[15] === filter || filter === 'all' ? (
+          match[16] === filter || filter === 'all' ? (
             <div
               className="bg-pink-400/70 text-white outline-zinc-500 mt-4 rounded-xl grid items-center hover:border-purple-400 hover:scale-105 transition duration-150 ease-in-out focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-fuchsia-200 border border-gray-300 p-4 lg:w-2/5 md:m-4"
               key={index}
