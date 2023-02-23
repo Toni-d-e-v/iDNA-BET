@@ -43,12 +43,12 @@ async function isLocked(teamAddr) {
 
 function Menu() {
   let Match1 = [
-    new Date('2023-02-12T23:30:00Z'),
-    'Kansas City',
-    'Philadelphia',
-    '0x75aa9d7ecddbfc4a8615d82845bbc5ff0384fb5d',
-    '0x1b3735f7f8c07068480d6dac679676ad36683f6d',
-    'NFL SUPER BOWL',
+    new Date('2023-02-26T16:30:00Z'),
+    'Manchester United',
+    'Newcastle United',
+    '0x8f604f4FCA08E4a67731B35f1b5C69Ed3acF676a',
+    '0x9159cae4B1beA5f6115D874228049ec98d94579f',
+    'THE CARABAO CUP (FINAL)',
     '#C9243F',
     '#FFFFFF',
     '#C9243F',
@@ -73,17 +73,17 @@ function Menu() {
       t2_c3_s2: '9',
       t2_c4_s1: '9'
     },
-    'https://www.espn.com/nfl/schedule/_/week/5/year/2022/seasontype/3',
-    'football',
+    'https://www.efl.com/efl-today/',
+    'soccer',
     {
-      c_title: 'NFL SUPER BOWL',
+      c_title: 'THE CARABAO CUP',
       c_description:
-        'The Super Bowl is the annual final playoff game of the National Football League to determine the league champion. It has served as the final game of every NFL season since 1966, replacing the NFL Championship Game. Since 2022, the game is played on the second Sunday in February.'
+        "The EFL Cup (historically and colloquially referred to as the League Cup), currently known as the Carabao Cup for sponsorship reasons, is an annual knockout competition and major trophy in men's domestic football in England. Organised by the English Football League (EFL), it is open to any club within the top four levels of the English football league system – 92 clubs in total – comprising the top-level Premier League, and the three divisions of the English Football League's own league competition (Championship, League One and League Two)."
     },
     {
       bet_lock: '',
-      bet_lock_auto: isLocked('0x75aa9d7ecddbfc4a8615d82845bbc5ff0384fb5d'),
-      bet_lock_auto_message: isLocked('0x75aa9d7ecddbfc4a8615d82845bbc5ff0384fb5d') ? 'iDNA' : 'Bets are closed'
+      bet_lock_auto: isLocked('0x8f604f4FCA08E4a67731B35f1b5C69Ed3acF676a'),
+      bet_lock_auto_message: isLocked('0x8f604f4FCA08E4a67731B35f1b5C69Ed3acF676a') ? 'iDNA' : 'Bets are closed'
     }
   ];
   let Match2 = [
