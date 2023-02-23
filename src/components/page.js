@@ -166,7 +166,7 @@ function Page(data) {
     try {
       let result = await response.json();
       console.log(result);
-      let callbackUrl = 'https://i-bet.top?txsent=true';
+      let callbackUrl = 'https://idna.bet?txsent=true';
       let tx_url = 'https://app.idena.io/dna/raw?tx=' + result.result + '&callback_format=html&callback_url=' + callbackUrl;
       window.open(tx_url, '_blank').focus();
       // toast.success('Bet sent successfully');
