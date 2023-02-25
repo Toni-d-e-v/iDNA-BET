@@ -263,7 +263,9 @@ function Menu() {
     '0xc497e389ca9c4e733b442cb2a2917ce13195ab39',
     '0x9cd0ed237a281f9501fca405a799fd0083cd6f7b',
     '0xc8b03a027b1cf53fa54e670309b05a804eb7e7dd',
-    '0x91d1c74aba228aa2a8d63f8964b9b466075490b3'
+    '0x91d1c74aba228aa2a8d63f8964b9b466075490b3',
+    '0x373A31461Ccb9484194cffCD2cDA049a7843b13c',
+    '0x2403e4580B3D3DCfaE8e9402c6a9c2A0004FB43A'
   ];
   let [total, setTotal] = React.useState(0);
   getBetsNumberTotal(address).then(res => {
