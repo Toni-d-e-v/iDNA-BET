@@ -447,7 +447,9 @@ function Page(data) {
                 // go back button to /
               }
               <div className="relative flex h-full cursor-pointer items-center justify-center p-4 font-bold text-pink-200 hover:text-zinc-200 transition-colors hover:bg-white/10">
-                <span>{tokensSecured ? <button onClick={() => signOut()}>Sign Out</button> : <button onClick={() => idenaSignIn()}>Sign in</button>}</span>
+                <span>{tokensSecured ? <button onClick={() => signOut()}>Sign Out</button> : <button onClick={() => idenaSignIn()}>
+                  <img src="https://scan.idena.io/static/images/idena_black.svg" width="20" />
+                  Sign in</button>}</span>
               </div>
               <div
                 onClick={supportClickHandler}
@@ -476,7 +478,15 @@ function Page(data) {
           </div>
           <div className="md:flex hidden flex-1 items-center justify-end">
             <div className="menu-item">
-              <span>{tokensSecured ? <button onClick={() => signOut()}>Sign Out</button> : <button onClick={() => idenaSignIn()}>Sign in</button>}</span>
+
+            <span>{tokensSecured ? <button onClick={() => signOut()}>            <img src="https://scan.idena.io/static/images/idena_black.svg" width="31" style={{marginRight: '4px'}} />
+</button> : 
+
+              <button onClick={() => idenaSignIn()}>              <img src="https://scan.idena.io/static/images/idena_black.svg" width="31" style={{marginRight: '4px'}} />
+              </button>}</span>
+              <span>{tokensSecured ? <button onClick={() => signOut()}>Sign Out</button> : 
+
+              <button onClick={() => idenaSignIn()}>  Sign in</button>}</span>
             </div>
             <div className="menu-item group">
               <span>

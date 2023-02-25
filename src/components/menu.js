@@ -40,6 +40,41 @@ async function isLocked(teamAddr) {
   }
   return true;
 }
+let url = 'https://restricted.idena.io';
+let api_key = 'idena-restricted-node-key';
+async function getBetsNumber(teamAddr) {
+  let data = {
+    method: 'contract_iterateMap',
+    params: [teamAddr, 'deposits', null, 'hex', 'hex', 5000],
+    id: 1,
+    key: api_key
+  };
+  let response = await fetch(url, {
+    method: 'POST',
+    body: JSON.stringify(data),
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  });
+  let result;
+  try {
+    result = await response.json();
+  } catch (err) {
+    console.log(err);
+    //toast.error("Something went wrong!");
+    return;
+  }
+  return result.result.items.length;
+}
+async function getBetsNumberTotal(array_addrs) {
+  let total = 0;
+  for (let i = 0; i < array_addrs.length; i++) {
+    let number = await getBetsNumber(array_addrs[i]);
+    total += number;
+  }
+  return total;
+}
+
 
 function Menu() {
   let Match1 = [
@@ -223,6 +258,18 @@ function Menu() {
   const [matches] = React.useState([Match1, Match2, Match3, Match4]);
   const [page, setPage] = React.useState(0);
   const [filter, setFilter] = React.useState('all');
+  const address = ["0x8f604f4FCA08E4a67731B35f1b5C69Ed3acF676a", "0x9159cae4B1beA5f6115D874228049ec98d94579f",
+    "0xc497e389ca9c4e733b442cb2a2917ce13195ab39",
+    "0x9cd0ed237a281f9501fca405a799fd0083cd6f7b",
+    "0xc8b03a027b1cf53fa54e670309b05a804eb7e7dd",
+    "0x91d1c74aba228aa2a8d63f8964b9b466075490b3",]
+  let [total, setTotal] = React.useState(0);
+  getBetsNumberTotal(address).then((res) => {
+    console.log(res);
+    setTotal(res);
+  });
+
+  console.log(total);
   // filter matches by type
 
   const renderMatches = () => {
@@ -426,7 +473,9 @@ function Menu() {
               <span className="text-sky-900">DNA</span>
               <span className="text-orange-300">bet</span>
             </div>
+
             <h1 className="mt-5 text-2xl uppercase text-center">Upcoming Live Sports Fixtures</h1>
+            <h2 className="mt-2 text-sm text-center">Active bets: {total}</h2>
             <div className="mt-3 text-sm font-bold text-center">Simply select the match and make your bet:</div>
           </div>
           {renderMatches()}
