@@ -75,7 +75,6 @@ async function getBetsNumberTotal(array_addrs) {
   return total;
 }
 
-
 function Menu() {
   let Match1 = [
     new Date('2023-02-26T16:30:00Z'),
@@ -213,10 +212,10 @@ function Menu() {
     // Q: why does GMT-0500 makes the date invalid in firefox?
     //
     new Date('2023-02-26T19:30:00Z'),
-    'Winner of SF1',
-    'Winner of SF2',
-    '',
-    '',
+    'Australia',
+    'South Africa',
+    '0x373A31461Ccb9484194cffCD2cDA049a7843b13c',
+    '0x2403e4580B3D3DCfaE8e9402c6a9c2A0004FB43A',
     'ICC Women`s T20 World Cup 2023',
     '#FFFFFF',
     '#FFFFFF',
@@ -250,21 +249,24 @@ function Menu() {
         'The 2023 ICC Women`s T20 World Cup is scheduled to be the eighth edition of ICC Women`s T20 World Cup tournament. It is scheduled to be held in South Africa, from 10 to 26 February 2023. Australia are the defending champions.'
     },
     {
-      bet_lock: 'Betting starts Feb 24th',
-      bet_lock_auto: isLocked('0x75aa9d7ecddbfc4a8615d82845bbc5ff0384fb5d'),
-      bet_lock_auto_message: isLocked('0x75aa9d7ecddbfc4a8615d82845bbc5ff0384fb5d') ? 'iDNA' : 'Bets are closed'
+      bet_lock: '',
+      bet_lock_auto: isLocked('0x373A31461Ccb9484194cffCD2cDA049a7843b13c'),
+      bet_lock_auto_message: isLocked('0x373A31461Ccb9484194cffCD2cDA049a7843b13c') ? 'iDNA' : 'Bets are closed'
     }
   ];
   const [matches] = React.useState([Match1, Match2, Match3, Match4]);
   const [page, setPage] = React.useState(0);
   const [filter, setFilter] = React.useState('all');
-  const address = ["0x8f604f4FCA08E4a67731B35f1b5C69Ed3acF676a", "0x9159cae4B1beA5f6115D874228049ec98d94579f",
-    "0xc497e389ca9c4e733b442cb2a2917ce13195ab39",
-    "0x9cd0ed237a281f9501fca405a799fd0083cd6f7b",
-    "0xc8b03a027b1cf53fa54e670309b05a804eb7e7dd",
-    "0x91d1c74aba228aa2a8d63f8964b9b466075490b3",]
+  const address = [
+    '0x8f604f4FCA08E4a67731B35f1b5C69Ed3acF676a',
+    '0x9159cae4B1beA5f6115D874228049ec98d94579f',
+    '0xc497e389ca9c4e733b442cb2a2917ce13195ab39',
+    '0x9cd0ed237a281f9501fca405a799fd0083cd6f7b',
+    '0xc8b03a027b1cf53fa54e670309b05a804eb7e7dd',
+    '0x91d1c74aba228aa2a8d63f8964b9b466075490b3'
+  ];
   let [total, setTotal] = React.useState(0);
-  getBetsNumberTotal(address).then((res) => {
+  getBetsNumberTotal(address).then(res => {
     console.log(res);
     setTotal(res);
   });
