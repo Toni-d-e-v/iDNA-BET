@@ -283,7 +283,7 @@ function Menu() {
           // filter matches by type
           match[16] === filter || filter === 'all' ? (
             <div
-              className="bg-pink-400/70 text-white outline-zinc-500 mt-4 rounded-xl grid items-center hover:border-purple-400 hover:scale-105 transition duration-150 ease-in-out focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-fuchsia-200 border border-gray-300 p-4 lg:w-2/5 md:m-4"
+              className="matches-list bg-pink-400/70 text-white outline-zinc-500 mt-4 rounded-xl grid items-center hover:border-purple-400 hover:scale-105 transition duration-150 ease-in-out focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-fuchsia-200 border border-gray-300 p-4 lg:w-2/5 md:m-4"
               key={index}
             >
               <button className="divide-y divide-dashed divide-zinc-200" key={index} onClick={() => setPage(index + 1)}>
@@ -304,7 +304,7 @@ function Menu() {
     return (
       <div>
         <nav className="sticky z-10 flex top-0 bg-gradient-to-r from-rose-500 to-pink-500">
-          <div className="flex flex-1 items-center justify-center">
+          <div className="flex flex-1 items-center gap-2 justify-center">
             <Tooltip message={'🗙 Filter'}>
               <div
                 className="menu-item"

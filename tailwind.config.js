@@ -27,9 +27,18 @@ module.exports = {
     extend: {
       animation: {
         blob: 'blob 7s infinite',
-        bias: 'bias 10s infinite'
+        bias: 'bias 10s infinite',
+        wavey: 'wavey 1000ms linear infinite'
       },
       keyframes: {
+        wavey: {
+          '0%, 100%': {
+            transform: 'scaleY(0.5)'
+          },
+          '50%': {
+            transform: 'scaleY(1.5)'
+          }
+        },
         blob: {
           '0%': {
             transform: 'translate(0px, 0px) scale(1)'
@@ -59,5 +68,5 @@ module.exports = {
       }
     }
   },
-  plugins: []
+  plugins: [require('./src/plugins/animationDelay')]
 };
