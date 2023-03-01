@@ -422,9 +422,9 @@ function Page(data) {
             <button onClick={() => (window.location.href = '/')}>
               <img
                 width="48"
-                src="./assets/images/gohome.png"
-                onMouseOver={e => (e.currentTarget.src = './assets/images/gohome.gif')}
-                onMouseOut={e => (e.currentTarget.src = './assets/images/gohome.png')}
+                src="./images/gohome.png"
+                onMouseOver={e => (e.currentTarget.src = './images/gohome.gif')}
+                onMouseOut={e => (e.currentTarget.src = './images/gohome.png')}
               />
             </button>
             <div className="font-bold text-2xl">
