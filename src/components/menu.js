@@ -77,11 +77,11 @@ async function getBetsNumberTotal(array_addrs) {
 
 function Menu() {
   let Match1 = [
-    new Date('2023-03-10T18:00:00Z'),
-    'Winner SF1',
-    'Winner SF2',
-    '',
-    '',
+    new Date('2023-03-12T18:00:00Z'),
+    'CryptoGeek',
+    'Artvist',
+    '0x6E713534Ff950662F7cDfE4a6f5a264f59bBFaaD',
+    '0xd688f6d1e76996b30fa8c368e0bb650113961c94',
     'THE FLIP WARS (FINAL)',
     '#C9243F',
     '#C9243F',
@@ -115,17 +115,17 @@ function Menu() {
         'Flip Wars is a competitive flip-making game created and supported by the Idena community. ✧ A flip is an essential part of Idena, it’s an AI-hard test created to prevent bots from participating in Idena’s unique Proof-Of-Person consensus. ✧ To make a flip truly AI-hard and to avoid the need for a trusted third party, flips must be human-generated. In Idena, flips are created by validated participants. But there is a learning process required to create truly AI-resistant and understandable flips. ✧ To help educate the newcomers about the intricacies involved in creating a good flip, a game called Flip Wars was created. It is a 1v1 game where two participants create a flip using the same keywords. The community votes on a best flip of the two using Idena Oracles, and the winner gets the prize or advances into the next round of the tournament.'
     },
     {
-      bet_lock: 'Bets open March 10th!',
-      bet_lock_auto: isLocked('0x8f604f4FCA08E4a67731B35f1b5C69Ed3acF676a'),
-      bet_lock_auto_message: isLocked('0x8f604f4FCA08E4a67731B35f1b5C69Ed3acF676a') ? 'iDNA' : 'Bets are closed'
+      bet_lock: '',
+      bet_lock_auto: isLocked('0x6E713534Ff950662F7cDfE4a6f5a264f59bBFaaD'),
+      bet_lock_auto_message: isLocked('0x6E713534Ff950662F7cDfE4a6f5a264f59bBFaaD') ? 'iDNA' : 'Bets are closed'
     }
   ];
   let Match2 = [
     new Date('2023-03-14T20:00:00Z'),
     'Man City',
     'Leipzig',
-    '',
-    '',
+    '0xF7374C42B7B3f3A032c52B2746fD723C9fF3F9e5',
+    '0x1A3509811349A26F204D803fE8CfB9489dDC33D4',
     'UEFA Champions League',
     '#E13A3E',
     '#FFFFFF',
@@ -159,9 +159,9 @@ function Menu() {
         'The UEFA Champions League (abbreviated as UCL, or sometimes, UEFA CL) is an annual club football competition organised by the Union of European Football Associations (UEFA) and contested by top-division European clubs, deciding the competition winners through a round robin group stage to qualify for a double-legged knockout format, and a single leg final. It is one of the most prestigious football tournaments in the world and the most prestigious club competition in European football, played by the national league champions (and, for some nations, one or more runners-up) of their national associations.'
     },
     {
-      bet_lock: 'Betting opening soon',
-      bet_lock_auto: isLocked('0xc497e389ca9c4e733b442cb2a2917ce13195ab39'),
-      bet_lock_auto_message: isLocked('0xc497e389ca9c4e733b442cb2a2917ce13195ab39') ? 'iDNA' : 'Bets are closed'
+      bet_lock: '',
+      bet_lock_auto: isLocked('0xF7374C42B7B3f3A032c52B2746fD723C9fF3F9e5'),
+      bet_lock_auto_message: isLocked('0xF7374C42B7B3f3A032c52B2746fD723C9fF3F9e5') ? 'iDNA' : 'Bets are closed'
     }
   ];
   let Match3 = [
@@ -214,8 +214,8 @@ function Menu() {
     new Date('2023-03-18T21:00:00Z'),
     'EDWARDS',
     'USMAN 3',
-    '',
-    '',
+    '0x1ADf3Bb68E35FfD37951CFf4c259B22C107c7c9A',
+    '0x804Af2b3F1aCB6c3027b9DC69e5A6CBe2F58CA83',
     'UFC 286',
     '#FFFFFF',
     '#FFFFFF',
@@ -249,23 +249,23 @@ function Menu() {
         'UFC 286: Edwards vs. Usman 3 is an upcoming mixed martial arts event produced by the Ultimate Fighting Championship that will take place on March 18, 2023, at The O2 Arena in London, England.'
     },
     {
-      bet_lock: 'Betting opening soon',
-      bet_lock_auto: isLocked('0x373A31461Ccb9484194cffCD2cDA049a7843b13c'),
-      bet_lock_auto_message: isLocked('0x373A31461Ccb9484194cffCD2cDA049a7843b13c') ? 'iDNA' : 'Bets are closed'
+      bet_lock: '',
+      bet_lock_auto: isLocked('0x1ADf3Bb68E35FfD37951CFf4c259B22C107c7c9A'),
+      bet_lock_auto_message: isLocked('0x1ADf3Bb68E35FfD37951CFf4c259B22C107c7c9A') ? 'iDNA' : 'Bets are closed'
     }
   ];
   const [matches] = React.useState([Match1, Match2, Match3, Match4]);
   const [page, setPage] = React.useState(0);
   const [filter, setFilter] = React.useState('all');
   const address = [
-    '0x8f604f4FCA08E4a67731B35f1b5C69Ed3acF676a',
-    '0x9159cae4B1beA5f6115D874228049ec98d94579f',
-    '0xc497e389ca9c4e733b442cb2a2917ce13195ab39',
-    '0x9cd0ed237a281f9501fca405a799fd0083cd6f7b',
-    '0xc8b03a027b1cf53fa54e670309b05a804eb7e7dd',
-    '0x91d1c74aba228aa2a8d63f8964b9b466075490b3',
-    '0x373A31461Ccb9484194cffCD2cDA049a7843b13c',
-    '0x2403e4580B3D3DCfaE8e9402c6a9c2A0004FB43A'
+    '0x6E713534Ff950662F7cDfE4a6f5a264f59bBFaaD',
+    '0xd688f6d1e76996b30fa8c368e0bb650113961c94',
+    '0xF7374C42B7B3f3A032c52B2746fD723C9fF3F9e5',
+    '0x1A3509811349A26F204D803fE8CfB9489dDC33D4',
+    '0xF7374C42B7B3f3A032c52B2746fD723C9fF3F9e5',
+    '0x1A3509811349A26F204D803fE8CfB9489dDC33D4',
+    '0x1ADf3Bb68E35FfD37951CFf4c259B22C107c7c9A',
+    '0x804Af2b3F1aCB6c3027b9DC69e5A6CBe2F58CA83'
   ];
   let [total, setTotal] = React.useState(0);
   getBetsNumberTotal(address).then(res => {
