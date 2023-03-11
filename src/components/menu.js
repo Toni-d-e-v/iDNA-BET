@@ -112,7 +112,7 @@ function Menu() {
     {
       c_title: 'FLIP WARS',
       c_description:
-        'Flip Wars is a competitive flip-making game created and supported by the Idena community. ✧ A flip is an essential part of Idena, it’s an AI-hard test created to prevent bots from participating in Idena’s unique Proof-Of-Person consensus. ✧ To make a flip truly AI-hard and to avoid the need for a trusted third party, flips must be human-generated. In Idena, flips are created by validated participants. But there is a learning process required to create truly AI-resistant and understandable flips. ✧ To help educate the newcomers about the intricacies involved in creating a good flip, a game called Flip Wars was created. It is a 1v1 game where two participants create a flip using the same keywords. The community votes on a best flip of the two using Idena Oracles, and the winner gets the prize or advances into the next round of the tournament.'
+        'Flip Wars is a competitive flip-making game created and supported by the Idena community. ✧ It is a 1v1 game where two participants create a flip using the same keywords. The community votes on a best flip of the two using Idena Oracles, and the winner gets the prize or advances into the next round of the tournament.'
     },
     {
       bet_lock: '',
