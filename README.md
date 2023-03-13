@@ -1,4 +1,4 @@
-# Idena world cup bet
+# Idena Bet platform
 ## Backend = backend.zip
 
 - Run the backend via docker
