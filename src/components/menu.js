@@ -165,12 +165,12 @@ function Menu() {
     }
   ];
   let Match3 = [
-    new Date('2023-08-01T20:00:00Z'),
-    'Below $0.5',
-    'Above $0.5',
-    '',
-    '',
-    "Will the price of BUSD be below '↘' or above '↗' on August 1st 2023?",
+    new Date('2023-05-15T20:00:00Z'),
+    'Dipped to $0.5 or lower',
+    'Did NOT dip to $0.5 or lower',
+    '0x9983944472449C2d9bC580122B68778D6f10212B',
+    '0x67381747af4190f4D1085E1952246FCc404E52e1',
+    'Will the price of BUSD ever dip to $0.5 or below before August 15th 2023?',
     '#553184',
     '#D6221B',
     '#FFFFFF',
@@ -203,9 +203,9 @@ function Menu() {
         'BUSD, or Binance USD, is a US Dollar pegged stablecoin issued by Binance. According to Binance it is backed 1:1 by a reserve of US Dollars and was founded by them in partnership with Paxos who is the issuer of the token. Paxos holds the reserves only partially in cash deposited in their US bank accounts with the other part held in U.S. Treasuries. BUSD is natively issued on the Ethereum blockchain by Paxos. Binance creates Binance-Peg BUSD by locking the natively ERC-20 BUSD in a smart contract on the Ethereum Blockchain and issuing Binance-Peg BUSD equivalent to the amount held in reserve in the smart contract. Binance-Peg BUSD is native to BNB chain.'
     },
     {
-      bet_lock: 'Betting opening soon',
-      bet_lock_auto: isLocked('0xc8b03a027b1cf53fa54e670309b05a804eb7e7dd'),
-      bet_lock_auto_message: isLocked('0xc8b03a027b1cf53fa54e670309b05a804eb7e7dd') ? 'iDNA' : 'Bets are closed'
+      bet_lock: '',
+      bet_lock_auto: isLocked('0x9983944472449C2d9bC580122B68778D6f10212B'),
+      bet_lock_auto_message: isLocked('0x9983944472449C2d9bC580122B68778D6f10212B') ? 'iDNA' : 'Bets are closed'
     }
   ];
   let Match4 = [
